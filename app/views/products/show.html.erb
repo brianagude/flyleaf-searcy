@@ -1,0 +1,33 @@
+<section class="stuff">
+  <div class="content">
+    <%= image_tag @product.image_1.url %>
+
+    <% if @product.image_2.present? %>
+      <%= image_tag @product.image_2.url %>
+    <% end %>
+
+    <% if @product.image_3.present? %>
+      <%= image_tag @product.image_3.url %>
+    <% end %>
+
+    <% if @product.image_4.present? %>
+      <%= image_tag @product.image_4.url %>
+    <% end %>
+
+    <% if @product.image_5.present? %>
+      <%= image_tag @product.image_5.url %>
+    <% end %>
+  </div>
+
+  <div class="info">
+    <div class="container">
+      <div>
+        <h4> Title: </h4> <%= @product.title %>
+        <h4> Author: </h4> <%= @product.author %>
+        <h4> Description: </h4> <%= simple_format @product.description %>
+        <h4> Purchase: </h4> <%= @product.location %>
+        <h4> Price: </h4> <%= number_to_currency(@product.price, precision: 0) %>
+      </div>
+    </div>
+  </div>
+</section>

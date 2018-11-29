@@ -1,0 +1,45 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  author: MyString
+  price: 1
+  image_1: MyString
+  image_2: MyString
+  image_3: MyString
+  image_4: MyString
+  image_5: MyString
+  printing_method: MyString
+  location_1_name: MyString
+  location_1_url: MyString
+  location_2_name: MyString
+  location_2_url: MyString
+  location_3_name: MyString
+  location_3_url: MyString
+  location_4_name: MyString
+  location_4_url: MyString
+  location_5_name: MyString
+  location_5_url: MyString
+
+two:
+  title: MyString
+  description: MyText
+  author: MyString
+  price: 1
+  image_1: MyString
+  image_2: MyString
+  image_3: MyString
+  image_4: MyString
+  image_5: MyString
+  printing_method: MyString
+  location_1_name: MyString
+  location_1_url: MyString
+  location_2_name: MyString
+  location_2_url: MyString
+  location_3_name: MyString
+  location_3_url: MyString
+  location_4_name: MyString
+  location_4_url: MyString
+  location_5_name: MyString
+  location_5_url: MyString
