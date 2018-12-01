@@ -3,6 +3,8 @@ const button = document.querySelector('a.menu-button')
 
   $(button).click(function(){
     $(menu).toggleClass("show");
+
+    return false
   });
 
 
@@ -11,4 +13,6 @@ const change = document.querySelector('a.switch')
 
   $(change).click(function(){
     $(split).toggleClass("switch");
+
+    return false
   });

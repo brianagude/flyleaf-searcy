@@ -15,6 +15,8 @@ a{
   text-decoration: none;
   color: #fff;
   font-family: 'BluuNextBold';
+
+  &:hover{text-decoration: underline;}
 }
 
 h1, h2, h3, h4{font-family: 'BluuNextBold';}
@@ -80,10 +82,32 @@ header{
     transform:  translateX(-100%);
   }
 
+section.home{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 100px 0;
 
+  width: 100%;
+  height: 100%;
+
+  div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 50%;
+  }
+
+  img{
+    max-height:  600px;
+    margin: 40px;
+  }
+}
 section.stuff{
   display: flex;
   flex-direction: row;
+  width: 100vw;
 
   div{
     width:  50%;
@@ -121,33 +145,26 @@ div.info{
   border:  solid 5px #fff;
   div{border:none;}
 
-  div.container{
-    text-align:  left;
-    // transform:  skewX(-20deg);
-    height: 100vh;
-    width: 500px;
-    // background-color: pink;
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    padding: 100px;
 
-    div{
-      margin: 20px;
-      // text-shadow: 2px 2px 4px rgba(250, 250, 250, 0.5);
-      width: 100%;
-      // border:  solid 5px #fff;
-      // background-color: pink;
-
-      h3, p{
-        display: inline;
-        // padding:  0 10px;
-
-      }
+    td{
+      p{text-align: left;}
+      h4{text-align: right;}
+      padding: 20px;
     }
-}
-
-
-
+  }
+    }
 
 }
-}
+
+
+
+
+
+
 
 section.about{
   text-align: center;

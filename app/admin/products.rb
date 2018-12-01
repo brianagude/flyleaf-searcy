@@ -1,6 +1,6 @@
 ActiveAdmin.register Product do
 
-permit_params :title, :author, :description, :price, :location, :image_1, :image_2, :image_3, :image_4, :image_5, :printing_method, :location_1_name, :location_1_url, :location_2_name, :location_2_url,:location_3_name, :location_3_url, :location_4_name, :location_4_url, :location_5_name, :location_5_url
+permit_params :title, :author, :description, :price, :image_1, :image_2, :image_3, :image_4, :image_5, :printing_method, :location_1_name, :location_1_url, :location_2_name, :location_2_url,:location_3_name, :location_3_url, :location_4_name, :location_4_url, :location_5_name, :location_5_url
 
 index do
   selectable_column
@@ -36,16 +36,16 @@ form do |f|
   end
 
   f.inputs 'Location Info' do
-    f.input :location_1_name, label: 'Location 1 Name'
-    f.input :location_1_url, label: 'Location 1 Url'
-    f.input :location_2_name, label: 'Location 2 Name'
-    f.input :location_2_url, label: 'Location 2 Url'
-    f.input :location_3_name, label: 'Location 3 Name'
-    f.input :location_3_url, label: 'Location 3 Url'
-    f.input :location_4_name, label: 'Location 4 Name'
-    f.input :location_4_url, label: 'Location 4 Url'
-    f.input :location_5_name, label: 'Location 5 Name'
-    f.input :location_5_url, label: 'Location 5 Url'
+    f.input :location_1_name
+    f.input :location_1_url
+    f.input :location_2_name
+    f.input :location_2_url
+    f.input :location_3_name
+    f.input :location_3_url
+    f.input :location_4_name
+    f.input :location_4_url
+    f.input :location_5_name
+    f.input :location_5_url
   end
 
   f.submit

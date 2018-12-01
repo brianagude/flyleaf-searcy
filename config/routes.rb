@@ -3,9 +3,11 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   resources :products
+  resources :artists
+  resource :about
 
   get 'products', to: 'index#products'
-  get 'about', to: 'artists#about'
+  get 'about', to: 'about#index'
   get 'artists', to: 'artists#artists'
 
   root 'products#index'

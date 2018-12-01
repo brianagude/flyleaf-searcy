@@ -20,14 +20,32 @@
   </div>
 
   <div class="info">
-    <div class="container">
-      <div>
-        <h4> Title: </h4> <%= @product.title %>
-        <h4> Author: </h4> <%= @product.author %>
-        <h4> Description: </h4> <%= simple_format @product.description %>
-        <h4> Purchase: </h4> <%= @product.location %>
-        <h4> Price: </h4> <%= number_to_currency(@product.price, precision: 0) %>
-      </div>
+      <table class="data">
+      <tr>
+        <td> <p> Title: </p> </td>
+        <td> <h4><%= @product.title %> </h4> </td>
+      </tr>
+      <tr>
+        <td> <p> Author: </p> </td>
+        <td> <h4><%= @product.author %> </h4> </td>
+      </tr>
+      <tr>
+        <td> <p> Description: </p> </td>
+        <td> <h4><%= @product.description %> </h4> </td>
+      </tr>
+      <tr>
+        <td> <p> Printing Method: </p> </td>
+        <td> <h4><%= @product.printing_method %> </h4> </td>
+      </tr>
+      <tr>
+        <td> <p> Price: </p> </td>
+        <td> <h4><%= @product.price %> </h4> </td>
+      </tr>
+      <tr>
+        <td> <p> Where to Buy: </p> </td>
+        <td> <h4><%= @product.location_1_name %> <%= @product.location_1_url %></td>
+      </tr>
+    </table>
+    <%= link_to "Back to all Books", root_path%>
     </div>
-  </div>
 </section>

@@ -1,30 +1,11 @@
-<section class="stuff">
-<%= render partial: 'books' %>
+<section class="home">
 
-<div class="info">
-  <table class="data">
-    <tr>
-      <td>Title</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Author</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td colspan="2">Description</td>
-    </tr>
-    <tr>
-      <td colspan="2"></td>
-    </tr>
-    <tr>
-      <td>Location</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Price</td>
-      <td></td>
-    </tr>
-  </table>
-</div>
-<section>
+    <% @products.each do |product| %>
+    <div>
+      <%= link_to product_path(product) do%>
+        <%= image_tag product.image_1.url %>
+      <% end %>
+      </div>
+    <% end %>
+
+</section>
