@@ -43,7 +43,24 @@
       </tr>
       <tr>
         <td> <p> Where to Buy: </p> </td>
-        <td> <h4><%= @product.location_1_name %> <%= @product.location_1_url %></td>
+        <td>
+          <h4><%= link_to @product.location_1_name, @product.location_1_url, target: :_blank%></h4>
+
+          <% if @product.location_2_name.present? & @product.location_2_name.present?%>
+            <h4><%= link_to @product.location_2_name, @product.location_2_url, target: :_blank%></h4>
+          <% end %>
+
+          <% if @product.location_3_name.present? & @product.location_3_name.present?%>
+            <h4><%= link_to @product.location_3_name, @product.location_3_url, target: :_blank%></h4>
+          <% end %>
+
+          <% if @product.location_4_name.present? & @product.location_4_name.present?%>
+            <h4><%= link_to @product.location_4_name, @product.location_4_url, target: :_blank%></h4>
+          <% end %>
+          <% if @product.location_5_name.present? & @product.location_5_name.present?%>
+            <h4><%= link_to @product.location_5_name, @product.location_5_url, target: :_blank%></h4>
+          <% end %>
+        </td>
       </tr>
     </table>
     <%= link_to "Back to all Books", root_path%>

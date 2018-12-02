@@ -111,6 +111,7 @@ section.stuff{
 
   div{
     width:  50%;
+    height: 100vh;
 
     background-color: #000;
     border: 5px solid #fff;
@@ -125,7 +126,7 @@ section.stuff{
 
   img{
     max-height:  600px;
-    border:  solid 5px #fff;
+    border: solid 5px #fff;
     margin: 50px;
   }
 }
