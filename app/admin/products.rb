@@ -50,4 +50,23 @@ form do |f|
 
   f.submit
   end
+
+  show do
+      attributes_table do
+        row 'Main Image' do |product|
+          image_tag product.image_1.thumb.url
+        end
+        row :title
+        row :author
+        row :description
+        row :price
+        row :printing_method
+        row :location_1_name, label: 'Location 1'
+        row :location_2_name, label: 'Location 2'
+        row :location_3_name, label: 'Location 3'
+        row :location_4_name, label: 'Location 4'
+        row :location_5_name, label: 'Location 5'
+      end
+
+    end
 end

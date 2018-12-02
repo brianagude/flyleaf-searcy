@@ -43,13 +43,20 @@ header{
   border: 5px solid #fff;
   z-index: 2;
 
-  img{
-    height: 24px;
-    margin: 0 20px;
-    transform: translateY(-5px)
+  a.switch, a.search, a.menu-button{
+    img{
+        max-height: 24px;
+        margin: 0 20px;
+        transform: translateY(-5px)
+      }
+  }
+
+  a.logo{
+    img{max-width: 1000px;}
   }
 
   h1{letter-spacing: 5px;}
+
   }
 
 

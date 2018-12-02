@@ -25,4 +25,13 @@ ActiveAdmin.register AdminUser do
     f.actions
   end
 
+  show do
+      attributes_table do
+        row :email
+        row :created_at
+        row :updated_at
+      end
+
+    end
+
 end
