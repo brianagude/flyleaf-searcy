@@ -27,7 +27,7 @@ $(change).click(function(){
 
 
 
-  var splitInterval = window.setInterval(timesplit, 3000);
+  var splitInterval = window.setInterval(timesplit, 5000);
 
 function timesplit() {
   $(split).toggleClass("switch");
