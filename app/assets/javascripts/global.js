@@ -19,9 +19,17 @@ const click = document.querySelector('a.search')
 
 const split = document.querySelector('section.split')
 const change = document.querySelector('a.switch')
+$(change).click(function(){
+  $(split).toggleClass("switch");
 
-  $(change).click(function(){
-    $(split).toggleClass("switch");
+  return false
+});
 
-    return false
-  });
+
+
+  var splitInterval = window.setInterval(timesplit, 3000);
+
+function timesplit() {
+  $(split).toggleClass("switch");
+
+}
