@@ -1,6 +1,10 @@
 class ArtistsController < ApplicationController
   def index
-    @artists = Artist.all
+    if params[:q].present?
+      @artists = Artist.where('lower(name) LIKE ?', '%' + params[:q].downcase + '%')
+    else
+      @artists = Artist.all
+    end
   end
 
   def show
