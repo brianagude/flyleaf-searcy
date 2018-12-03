@@ -1,1 +1,11 @@
-<h4> <%= @about.bio %> </h4>
+<% @about.each do |print| %>
+  <section class="about">
+    <h1>  <%= print.bio %> </h1>
+  </section>
+
+  <footer>
+    <p> <%= link_to print.email, print.email %> </p>
+    <p> <%= link_to 'Briana Gude Designs', 'http: www.brianagude.com', target: :_blank%></p>
+    <p> <%= link_to print.instagram, print.email, target: :_blank %></p>
+  </footer>
+<% end %>

@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Always Leave the First Page Blank</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= favicon_link_tag asset_path('ringlogo.png'), :rel => 'icon', :type =>  'image/png' %>
+    <% keywords 'Independent Publishers in NY, Publishing NYC, Print Shops NY, Always Leave the First Page Blank, Flyleaf, Small Print Presses, Printed Matter, Curator, Curatorial Collectives' %>
 
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/bluu" type="text/css"/>
-    <%= stylesheet_link_tag    'application', media: 'all'%>
+    <%= stylesheet_link_tag 'application', media: 'all'%>
   </head>
 
   <body>
@@ -17,6 +18,7 @@
       </div>
 
       <%= link_to image_tag('logo.png'), root_path, class: "logo"%>
+
       <div>
         <%= link_to image_tag('search.png'), "#", class: "search"%>
         <%= link_to image_tag('menu.png'), "#", class: "menu-button"%>
@@ -27,6 +29,11 @@
       <%= link_to 'Artists', artists_path %>
       <%= link_to 'About', about_path %>
     </nav>
+    <div class="search">
+      <form action="">
+        <input type="text" name="q" value="<%= params[:q] %>" placeholder="SEARCH . . .">
+      </form>
+    </div>
     <%= yield %>
     <section class="split"></section>
     <%= javascript_include_tag 'application'%>
