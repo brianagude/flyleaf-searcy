@@ -16,6 +16,7 @@ gem 'cancan'
 gem 'draper'
 gem 'pundit'
 
+gem 'meta-tags'
 
 
 

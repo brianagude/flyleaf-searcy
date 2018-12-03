@@ -4,6 +4,6 @@ class AboutsController < ApplicationController
   end
 
   def show
-    @about = About.find(params[:id])
+    @about = About.all
   end
 end
