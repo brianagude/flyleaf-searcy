@@ -196,11 +196,15 @@ section.home {
     align-items: center;
     flex-wrap: wrap;
     width: 50%;
+    padding: 0;
   }
 
   img {
-    width: 25%;
-    margin: 40px 10%;
+    width: 500px;
+    margin: 40px 80px;
+    padding: 0;
+
+    &:hover{border: solid 5px #fff;}
   }
 }
 
@@ -231,6 +235,8 @@ section.stuff {
 
       border: solid 5px #fff;
       margin: 50px;
+
+      padding: 0;
     }
   }
 
