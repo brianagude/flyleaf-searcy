@@ -6,34 +6,25 @@
   <div class="info">
       <table class="data">
         <tr>
-          <td> <p> Name: </p> </td>
-          <td> <h4><%= @artist.name %> </h4> </td>
+          <td colSpan = "2"> <h4><%= @artist.name %> is...</h4> </td>
         </tr>
-      <tr>
-        <td> <p> Bio: </p> </td>
-        <td> <h4><%= @artist.bio %> </h4> </td>
-      </tr>
-      <% if @artist.email.present? %>
         <tr>
-          <td> <p>Email:</p> </td>
-          <td><h4><%= mail_to @artist.email, @artist.email %></h4></td>
-      <% end %>
-      <% if @artist.website.present? %>
+          <td colSpan = "2"> <p><%= @artist.bio %> </p> </td>
+        </tr>
         <tr>
-          <td> <p>Website: </p></td>
-          <td><h4><%= link_to @artist.website, @artist.website, target: :_blank %></h4></td>
-      <% end %>
-      <% if @artist.instagram.present? %>
-        <tr>
-          <td> <p>Instagram: </p></td>
-          <td><h4><%= link_to @artist.instagram, @artist.instagram, target: :_blank %></h4></td>
-      <% end %>
-      <% if @artist.twitter.present? %>
-        <tr>
-          <td> <p>Twitter: </p></td>
-          <td><h4><%= link_to @artist.twitter, @artist.twitter, target: :_blank %></h4></td>
-      <% end %>
+          <% if @artist.email.present? %>
+            <td><p><%= mail_to 'Email', @artist.email %></p></td>
+          <% end %>
+          <% if @artist.website.present? %>
+            <td><p><%= link_to 'Website', @artist.website, target: :_blank %></p></td>
+          <% end %>
+          <% if @artist.instagram.present? %>
+            <td><p><%= link_to 'Instagram', @artist.instagram, target: :_blank %></p></td>
+          <% end %>
+          <% if @artist.twitter.present? %>
+            <td><p><%= link_to 'twitter', @artist.twitter, target: :_blank %></p></td>
+          <% end %>
     </table>
-    <%= link_to "Back to all Artists", artists_path%>
+    <%= link_to "BACK TO ALL ARTISTS", artists_path%>
     </div>
 </section>

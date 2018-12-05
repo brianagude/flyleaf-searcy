@@ -258,12 +258,8 @@ section.stuff {
       padding: 100px;
 
       td {
-        p {
-          text-align: left;
-        }
-
-        h4 {
-          text-align: right;
+        p, h4 {
+          text-align: center;
         }
         padding: 20px;
       }
@@ -299,7 +295,7 @@ footer {
   height: 40px;
   padding: 5px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 

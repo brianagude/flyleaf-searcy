@@ -39,7 +39,7 @@
       </tr>
       <tr>
         <td> <p> Price: </p> </td>
-        <td> <h4><%= @product.price %> </h4> </td>
+        <td> <h4><%= number_to_currency(@product.price, precision: 0) %> </h4> </td>
       </tr>
       <tr>
         <td> <p> Where to Buy: </p> </td>
@@ -63,6 +63,6 @@
         </td>
       </tr>
     </table>
-    <%= link_to "Back to all Books", root_path%>
+    <%= link_to "BACK TO ALL BOOKS", root_path%>
     </div>
 </section>

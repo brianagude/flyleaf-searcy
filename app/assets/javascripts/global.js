@@ -27,9 +27,9 @@ $(change).click(function(){
 
 
 
-  var splitInterval = window.setInterval(timesplit, 5000);
-
-function timesplit() {
-  $(split).toggleClass("switch");
-
-}
+//   var splitInterval = window.setInterval(timesplit, 5000);
+//
+//   function timesplit() {
+//     $(split).toggleClass("switch");
+//
+// }
