@@ -45,6 +45,12 @@
           <td> <h4><%= @product.dimensions %> </h4> </td>
         </tr>
       <% end %>
+      <% if @product.pages?%>
+        <tr>
+          <td> <p> Pages: </p> </td>
+          <td> <h4><%= @product.pages %> </h4> </td>
+        </tr>
+      <% end %>
       <tr>
         <td> <p> Price: </p> </td>
         <td> <h4><%= number_to_currency(@product.price, precision: 0) %> </h4> </td>
