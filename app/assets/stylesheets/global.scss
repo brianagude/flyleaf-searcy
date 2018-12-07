@@ -74,13 +74,17 @@ header {
   h1 {letter-spacing: 5px;}
 }
 
+// .show-search {transform: translateY(64px);}
+.show {transform: translateY(64px);}
+.switch {transform: translateX(-100%);}
+
 div.menu2{display:none;}
 
 nav {
   background-color: #000;
 
   position: fixed;
-  top: 64px;
+  top: 0;
   left: 0;
 
   width: 100%;
@@ -95,64 +99,48 @@ nav {
   transition: transform 0.5s;
   z-index: 1;
 
-
   a {margin: 0 80px;}
+  div{width: 50%;}
 }
 
   div.search {
     background-color: #000;
 
-    position: fixed;
-    top: 0;
-    left: 0;
+    // position: fixed;
+    // top: 64px;
+    // left: 0;
 
-    width: 100%;
+    width: 50%;
     height: 40px;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    border: 5px solid #fff;
-    border-top: none;
-    transition: transform 0.5s;
+    border-right: 5px solid #fff;
+    border-bottom: 5px solid #fff;
+    // border-top: none;
+    // transition: transform 0.5s;
     z-index: 1;
 
     a {margin: 0 80px;}
   }
 
-  .show-search {transform: translateY(64px);}
-  .show {transform: translateY(-64px);}
-  .switch {transform: translateX(-100%);}
-
   form {
-    width: 90%;
-    background-color: none;
+    width: 100%;
+    background-color: #000;
+    border:none;
+    left:0;
+    padding: 5px;
 
-    label {display: block;}
-
-    input[type=email],
-    input[type=password],
-    input[type=text],
-    textarea {
+    input[type=text]{
       width: 100%;
-      background-color: #fff;
-      color: #000;
-      font-family: inherit;
+      background-color: #000;
+      color: rgba(255, 255, 255, 1);
+      font-family: 'BluuNextBold';
       font-size: inherit;
-    }
-
-    input[type=submit] {
-      color: #fff;
-      font-family: inherit;
-      font-size: inherit;
-      appearance: none;
-      border: none;
-    }
-
-    abbr {
-      text-decoration: none;
-      float: right;
+      border:none;
+      outline: none;
     }
   }
 
@@ -164,14 +152,16 @@ section.home {
   top:0;
   left: 0;
   position: fixed;
-  padding: 0;
+  padding: 0 0 0 15px;
   margin: 0;
   width: 100%;
   height: 100vh;
 
   img {
     height: 400px;
-    margin: 80px 20px 0 20px;
+    max-width: 300px;
+    margin: 80px 30px 0 30px;
+    transform: translateY(-8%);
     padding: 0;
     &:hover{border: solid 5px #fff;}
   }
@@ -211,8 +201,8 @@ section.stuff {
   }
 
   div.info {
-    height: 100%;
-    min-height: 100vh;
+    height: 100vh;
+    max-height: 100%;
     padding-bottom: 20px;
     // background-color: pink;
     margin-top: 0;

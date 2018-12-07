@@ -16,27 +16,23 @@
       <div><%= link_to image_tag('switch.png'), "#", class: "switch"%></div>
       <%= link_to image_tag('logo.png'), root_path, class: "logo"%>
       <div>
-        <%= link_to image_tag('search.png'), "#", class: "search"%>
+        <%# <%= link_to image_tag('search.png'), "#", class: "search"%>
         <%= link_to image_tag('menu.png'), "#", class: "menu-button"%>
       </div>
     </header>
-
-    <nav>
-      <%= link_to 'Books', products_path %>
-      <%= link_to 'Artists', artists_path %>
-      <%= link_to 'About', about_path %>
-    </nav>
 
     <div class="menu2">
       <div class="links">
         <%= link_to image_tag('search.png'), "#", class: "search-mobile"%>
         <%= link_to image_tag('x.png'), "#", class: "close-mobile"%>
       </div>
+
       <div class="search">
         <form action="">
           <input type="text" name="q" value="<%= params[:q] %>" placeholder="Search . . .">
         </form>
       </div>
+
       <div class="page-links">
         <%= link_to 'Books', products_path%>
         <%= link_to 'Artists', artists_path%>
@@ -44,11 +40,7 @@
       </div>
     </div>
 
-    <div class="search">
-      <form action="">
-        <input type="text" name="q" value="<%= params[:q] %>" placeholder="Search . . .">
-      </form>
-    </div>
+
 
     <%= yield %>
     <section class="split"></section>

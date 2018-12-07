@@ -1,3 +1,4 @@
+// toggle the menu
 const menu = document.querySelector('nav')
 const button = document.querySelector('a.menu-button')
 
@@ -7,6 +8,7 @@ const button = document.querySelector('a.menu-button')
     return false
   });
 
+// toggle search
 const search = document.querySelector('div.search')
 const click = document.querySelector('a.search')
 
@@ -16,7 +18,7 @@ const click = document.querySelector('a.search')
     return false
   });
 
-
+// toggle split screen
 const split = document.querySelector('section.split')
 const change = document.querySelector('a.switch')
 $(change).click(function(){
@@ -24,12 +26,3 @@ $(change).click(function(){
 
   return false
 });
-
-
-
-//   var splitInterval = window.setInterval(timesplit, 5000);
-//
-//   function timesplit() {
-//     $(split).toggleClass("switch");
-//
-// }

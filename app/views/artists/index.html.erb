@@ -1,3 +1,16 @@
+<nav>
+  <div class= "search">
+    <form action="">
+      <input type="text" name="q" value="<%= params[:q] %>" placeholder="Search Artists">
+    </form>
+  </div>
+  <div>
+    <%= link_to 'Books', products_path %>
+    <%= link_to 'Artists', artists_path %>
+    <%= link_to 'About', about_path %>
+  </div>
+</nav>
+
 <section class="home">
   <% @artists.each do |artist| %>
     <%= link_to artist_path(artist) do%>
