@@ -170,15 +170,18 @@ section.home {
 section.stuff {
   display: flex;
   flex-direction: row;
+  margin-top: 0;
 
 
   div {
+    margin-top: 0;
+    padding-top: 0;
     width: 50%;
     height: 100vh;
     background-color: #000;
     border: 5px solid #fff;
     border-top: none;
-    padding-top: 100px;
+    // padding-top: 100px;
   }
 
   div.content {
@@ -203,7 +206,7 @@ section.stuff {
   div.info {
     height: 100vh;
     max-height: 100%;
-    padding-bottom: 20px;
+    // padding-bottom: 20px;
     // background-color: pink;
     margin-top: 0;
     // padding-top: 0;
@@ -228,8 +231,9 @@ section.stuff {
       width: 100%;
       border-collapse: collapse;
       top: 0;
-      margin-top: 0;
-      margin-bottom: 20px;
+      margin: 0;
+      padding: 0;
+      // margin-bottom: 20px;
       td {
         p, h4, a{
           font-size: 24px;
@@ -240,7 +244,7 @@ section.stuff {
         padding: 10px 20px;
       }
       td:nth-child(odd) {width: 30%;}
-      margin-bottom: 20px;
+
     }
     table.data{
       td {
