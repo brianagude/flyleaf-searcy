@@ -20,7 +20,7 @@
   </div>
 
   <div class="info">
-      <table class="data">
+      <table>
       <tr>
         <td> <p> Title: </p> </td>
         <td> <h4><%= @product.title %> </h4> </td>
@@ -33,10 +33,12 @@
         <td> <p> Description: </p> </td>
         <td> <h4><%= @product.description %> </h4> </td>
       </tr>
-      <tr>
-        <td> <p> Printing Method: </p> </td>
-        <td> <h4><%= @product.printing_method %> </h4> </td>
-      </tr>
+      <% if @product.printing_method.present?%>
+        <tr>
+          <td> <p> Printing Method: </p> </td>
+          <td> <h4><%= @product.printing_method %> </h4> </td>
+        </tr>
+      <% end %>
       <tr>
         <td> <p> Price: </p> </td>
         <td> <h4><%= number_to_currency(@product.price, precision: 0) %> </h4> </td>

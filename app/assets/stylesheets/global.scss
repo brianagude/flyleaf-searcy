@@ -1,5 +1,10 @@
+@font-face{
+  font-family: "Happy";
+  src:  url(happy-times-at-the-ikob-webfont.woff2), url(happy-times-at-the-ikob-webfont.woff);
+}
+
 body {
-  font-family: 'BluuNextBold';
+  font-family: 'Happy';
   color: #fff;
   font-size: 18px;
   font-weight: 400;
@@ -75,8 +80,9 @@ header {
 
   a.logo {
     img {
-      max-width: 1000px;
+      max-width: 800px;
       padding: none;
+      transform: translateY(-13%);
       // max-height: 80px;
     }
   }
@@ -173,27 +179,23 @@ nav {
 section.home {
   display: flex;
   border: 5px solid #fff;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 100px 0;
+  justify-content: center;
+  align-items: center;
+  top:0;
+  left: 0;
+  position: fixed;
+  // flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
   width: 100%;
-  height: 100%;
-  min-height: 100vh;
-
-  div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 50%;
-    padding: 0;
-  }
+  height: 100vh;
+  // min-height: 100vh;
 
   img {
-    width: 400px;
-    margin: 40px 80px;
+    height: 400px;
+    margin: 80px 20px 0 20px;
     padding: 0;
-
+    // margin: 0;
     &:hover{border: solid 5px #fff;}
   }
 }
@@ -255,10 +257,20 @@ section.stuff {
       padding: 100px;
 
       td {
-        p, h4 {
-          text-align: center;
+        p, h4, a{
+          font-size: 24px;
+          font-family: 'Happy';
         }
+        p{text-align: left}
+        h4, a{text-align: right;}
         padding: 20px;
+      }
+    }
+    table.data{
+      td {
+        p, h4, a{text-align: center;}
+        h4, a{font-family: 'BluuNextBold'}
+
       }
     }
   }
@@ -267,9 +279,16 @@ section.stuff {
 section.about {
   text-align: center;
   position: fixed;
+  margin: auto;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 90%;
+
+  h3{
+    font-family: 'Happy';
+    text-align: center;
+  }
 }
 
 section.split {
