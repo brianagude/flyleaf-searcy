@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_02_023401) do
+ActiveRecord::Schema.define(version: 2018_12_07_192159) do
 
   create_table "abouts", force: :cascade do |t|
     t.text "bio"
@@ -81,6 +81,7 @@ ActiveRecord::Schema.define(version: 2018_12_02_023401) do
     t.string "location_5_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "dimensions"
   end
 
 end

@@ -1,6 +1,6 @@
 ActiveAdmin.register Product do
 
-permit_params :title, :author, :description, :price, :image_1, :image_2, :image_3, :image_4, :image_5, :printing_method, :location_1_name, :location_1_url, :location_2_name, :location_2_url,:location_3_name, :location_3_url, :location_4_name, :location_4_url, :location_5_name, :location_5_url
+permit_params :title, :author, :description, :price, :image_1, :image_2, :image_3, :image_4, :image_5, :printing_method, :location_1_name, :location_1_url, :location_2_name, :location_2_url,:location_3_name, :location_3_url, :location_4_name, :location_4_url, :location_5_name, :location_5_url, :dimensions
 
 index do
   selectable_column
@@ -11,6 +11,7 @@ index do
   column :title
   column :author
   column :price
+  column :dimensions
   actions
 end
 
@@ -33,6 +34,7 @@ form do |f|
   f.inputs 'Purchase Info' do
     f.input :price
     f.input :printing_method
+    f.input :dimensions
   end
 
   f.inputs 'Location Info' do
@@ -59,6 +61,7 @@ form do |f|
         row :title
         row :author
         row :description
+        row :dimensions
         row :price
         row :printing_method
         row :location_1_name, label: 'Location 1'
