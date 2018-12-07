@@ -211,7 +211,13 @@ section.stuff {
   }
 
   div.info {
-    height: 100vh;
+    height: 100%;
+    min-height: 100vh;
+    padding-bottom: 20px;
+    // background-color: pink;
+    margin-top: 0;
+    // padding-top: 0;
+
     top: 0;
     position: sticky;
     position: -webkit-sticky;
@@ -231,8 +237,9 @@ section.stuff {
     table {
       width: 100%;
       border-collapse: collapse;
-      padding: 100px;
-
+      top: 0;
+      margin-top: 0;
+      margin-bottom: 20px;
       td {
         p, h4, a{
           font-size: 24px;
@@ -240,8 +247,10 @@ section.stuff {
         }
         p{text-align: left}
         h4, a{text-align: right;}
-        padding: 20px;
+        padding: 10px 20px;
       }
+      td:nth-child(odd) {width: 30%;}
+      margin-bottom: 20px;
     }
     table.data{
       td {
