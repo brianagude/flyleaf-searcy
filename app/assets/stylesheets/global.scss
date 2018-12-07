@@ -9,7 +9,9 @@ body {
   font-size: 18px;
   font-weight: 400;
   line-height: 1.45;
+
   background-color: #000;
+
   margin: 40px 0 0;
   padding: 0;
 }
@@ -19,52 +21,35 @@ a {
   color: #fff;
   font-family: 'BluuNextBold';
 
-  &:hover {
-    text-decoration: underline;
-  }
+  &:hover {text-decoration: underline;}
 }
 
 h1,
 h2,
 h3,
-h4 {
-  font-family: 'BluuNextBold';
-}
+h4 {font-family: 'BluuNextBold';}
 
-h1 {
-  font-size: 43px;
-}
-
-h2 {
-  font-size: 41px;
-}
-
-h3 {
-  font-size: 34px;
-}
-
-h4 {
-  font-size: 28px;
-}
-
-h5 {
-  font-size: 19px;
-}
-
-a {
-  font-size: 24px;
-}
+h1 {font-size: 43px;}
+h2 {font-size: 41px;}
+h3 {font-size: 34px;}
+h4 {font-size: 28px;}
+h5 {font-size: 19px;}
+a {font-size: 24px;}
 
 header {
   position: fixed;
   top: 0;
   left: 0;
+
   width: 100%;
   height: 64px;
+
   background-color: #000;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   border: 5px solid #fff;
   z-index: 2;
 
@@ -83,45 +68,51 @@ header {
       max-width: 800px;
       padding: none;
       transform: translateY(-13%);
-      // max-height: 80px;
     }
   }
 
-  h1 {
-    letter-spacing: 5px;
-  }
+  h1 {letter-spacing: 5px;}
 }
+
 div.menu2{display:none;}
+
 nav {
   background-color: #000;
+
   position: fixed;
   top: 64px;
   left: 0;
+
   width: 100%;
   height: 40px;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
   border: 5px solid #fff;
   border-top: none;
   transition: transform 0.5s;
-
-  a {
-    margin: 0 80px;
-  }
   z-index: 1;
+
+
+  a {margin: 0 80px;}
 }
 
   div.search {
     background-color: #000;
+
     position: fixed;
     top: 0;
     left: 0;
+
     width: 100%;
     height: 40px;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     border: 5px solid #fff;
     border-top: none;
     transition: transform 0.5s;
@@ -137,37 +128,26 @@ nav {
   form {
     width: 90%;
     background-color: none;
-    // color: #fff;
-    div.input {
-      // margin: 1em 0;
-    }
 
-    label {
-      display: block;
-      // margin: 0 0 0.25em 0;
-    }
+    label {display: block;}
 
     input[type=email],
     input[type=password],
     input[type=text],
     textarea {
       width: 100%;
-      // padding: 0.5em 0.75em 0.5em 0.75em;
       background-color: #fff;
       color: #000;
       font-family: inherit;
       font-size: inherit;
-      // border: 1px solid #fff;
     }
 
     input[type=submit] {
-      // background: #000;
       color: #fff;
       font-family: inherit;
       font-size: inherit;
       appearance: none;
       border: none;
-      // padding: 0.5em 1.5em 0.5em 1.5em;
     }
 
     abbr {
@@ -184,18 +164,15 @@ section.home {
   top:0;
   left: 0;
   position: fixed;
-  // flex-wrap: wrap;
   padding: 0;
   margin: 0;
   width: 100%;
   height: 100vh;
-  // min-height: 100vh;
 
   img {
     height: 400px;
     margin: 80px 20px 0 20px;
     padding: 0;
-    // margin: 0;
     &:hover{border: solid 5px #fff;}
   }
 }
@@ -224,7 +201,6 @@ section.stuff {
     flex-wrap: wrap;
 
     img {
-      // max-width: 500px;
       max-height: 600px;
 
       border: solid 5px #fff;
@@ -279,10 +255,12 @@ section.stuff {
 
 section.about {
   text-align: center;
-  position: fixed;
   margin: auto;
+
+  position: fixed;
   top: 50%;
   left: 50%;
+
   transform: translate(-50%, -50%);
   width: 90%;
 
@@ -296,9 +274,12 @@ section.split {
   position: fixed;
   top: 0;
   right: 0;
+
   width: 50%;
   height: 100%;
+
   background-color: #fff;
+
   mix-blend-mode: difference;
   pointer-events: none;
   transition: all 0.5s ease;
@@ -308,9 +289,11 @@ footer {
   position: fixed;
   bottom: 0;
   left: 0;
+
   width: 100%;
   height: 40px;
   padding: 10px 20px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -331,7 +314,9 @@ footer {
     justify-content: center;
 
     a.menu-button, a.search, a.switch {display: none;}
-    a.logo{img{max-width: 800px;}}
+    a.logo{
+      img{max-width: 800px;}
+    }
     img{transform: translateY(-50%)}
   }
 
@@ -340,26 +325,29 @@ footer {
     justify-content:center;
     align-items: center;
     flex-wrap: wrap;
+
     top: 0;
     left: 0;
     position: fixed;
     width: 100%;
     height: 100%;
+
     background-color: black;
     padding: 20px;
-
     z-index: 2;
 
     div.links{
       top: 0;
       left: 0;
       position: fixed;
+
       width: 100%;
       height: 200px;
+      padding: 40px 20px;
+
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 40px 20px;
     }
 
     div.search-mobile{
@@ -367,11 +355,14 @@ footer {
       position: fixed;
       top: 0;
       left: 0;
+
       width: 100%;
       height: 40px;
+
       display: flex;
       justify-content: center;
       align-items: center;
+
       border: 5px solid #fff;
       border-top: none;
       transition: transform 0.5s;
@@ -383,6 +374,7 @@ footer {
     div.page-links{
       height: 50%;
       width: 100%;
+
       display: flex;
       justify-content:center;
       align-items: center;
@@ -405,18 +397,15 @@ footer {
 
   nav {display: none;}
 
-  .show {
-    transform: translateY(-64px);
-  }
+  .show {transform: translateY(-64px);}
 
-  .switch {
-    transform: translateY(-100%);
-  }
+  .switch {transform: translateY(-100%);}
 
   section.home {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+
     margin: 100px 0;
     width: 100%;
     height: 100%;
@@ -437,6 +426,7 @@ footer {
       width: 100%;
       height: 100%;
       display: block;
+
       background-color: rgba(255, 255, 255, 0);
       border: 5px solid #fff;
       border-top: none;
@@ -455,8 +445,6 @@ footer {
       padding-top: 500px;
 
       img {
-        // width: 3000px;
-        // max-height: 600px;
         min-width: 50%;
         width: auto;
         height: auto;
@@ -471,17 +459,12 @@ footer {
       top: 0;
       left: 0;
       max-height: 500px;
-      // z-index: 2;
       padding: none;
       border-top: none;
       border-bottom: none;
 
       table {
-        td {
-          padding: 10px;
-          // p, a{font-size: 34px}
-          // h4{font-size: 43px}
-        }
+        td {padding: 10px;}
       }
     }
   }
@@ -513,9 +496,11 @@ footer {
     position: fixed;
     bottom: 0;
     left: 0;
+
     width: 100%;
     height: 224px;
     padding: 5px;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -524,7 +509,6 @@ footer {
     p{
       width: 100%;
       text-align: center;
-      // font-size: 34px;
       margin: 5px;
     }
   }
