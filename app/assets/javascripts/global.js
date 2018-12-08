@@ -26,3 +26,13 @@ $(change).click(function(){
 
   return false
 });
+
+// toggle mobile the menu
+const menu2 = document.querySelector('div.menu2')
+const button2 = document.querySelector('a.menu-button2')
+
+  $(button2).click(function(){
+    $(menu2).addClass("show");
+
+    return false
+  });

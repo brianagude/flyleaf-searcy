@@ -21,25 +21,7 @@
       </div>
     </header>
 
-    <div class="menu2">
-      <div class="links">
-        <%= link_to image_tag('search.png'), "#", class: "search-mobile"%>
-        <%= link_to image_tag('x.png'), "#", class: "close-mobile"%>
-      </div>
-
-      <div class="search">
-        <form action="">
-          <input type="text" name="q" value="<%= params[:q] %>" placeholder="Search . . .">
-        </form>
-      </div>
-
-      <div class="page-links">
-        <%= link_to 'Books', products_path%>
-        <%= link_to 'Artists', artists_path%>
-        <%= link_to 'About', about_path%>
-      </div>
-    </div>
-
+    
 
 
     <%= yield %>
