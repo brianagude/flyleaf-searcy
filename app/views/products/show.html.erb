@@ -6,22 +6,22 @@
 
 <section class="stuff">
   <div class="content">
-    <%= image_tag @product.image_1.url %>
+    <%= image_tag @product.image_1.large.url %>
 
     <% if @product.image_2.present? %>
-      <%= image_tag @product.image_2.url %>
+      <%= image_tag @product.image_2.large.url %>
     <% end %>
 
     <% if @product.image_3.present? %>
-      <%= image_tag @product.image_3.url %>
+        <%= image_tag @product.image_3.large.url %>
     <% end %>
 
     <% if @product.image_4.present? %>
-      <%= image_tag @product.image_4.url %>
+        <%= image_tag @product.image_4.large.url %>
     <% end %>
 
     <% if @product.image_5.present? %>
-      <%= image_tag @product.image_5.url %>
+        <%= image_tag @product.image_5.large.url %>
     <% end %>
   </div>
 
