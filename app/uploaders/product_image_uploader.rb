@@ -34,15 +34,15 @@ class ProductImageUploader < CarrierWave::Uploader::Base
   end
 
   version :square do
-    process resize_to_fit: [400, 400]
+    process resize_to_fill: [400, 400]
   end
 
   version :icon do
-    process resize_to_fill: [270, 360]
+    process resize_to_fill: [360, 260]
   end
 
   version :large do
-    process resize_to_fit: [600, 600]
+    process resize_to_fill: [500, 500]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
