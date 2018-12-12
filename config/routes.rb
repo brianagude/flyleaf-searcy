@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   get 'about', to: 'about#index'
   get 'artists', to: 'artists#artists'
 
-  root 'products#index'
+  root 'abouts#index'
 end

@@ -38,7 +38,7 @@ class ProductImageUploader < CarrierWave::Uploader::Base
   end
 
   version :icon do
-    process resize_to_fill: [360, 260]
+    process resize_to_fit: [270, 360]
   end
 
   version :large do
