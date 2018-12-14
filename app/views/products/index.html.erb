@@ -16,7 +16,7 @@
 <section class="home">
   <% @products.each do |product| %>
     <%= link_to product_path(product) do%>
-      <%= image_tag product.image_1.square.url %>
+      <%= image_tag product.image_1.url %>
     <% end %>
   <% end %>
 </section>
