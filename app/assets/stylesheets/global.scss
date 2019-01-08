@@ -16,6 +16,7 @@ body {
   padding: 0;
 }
 
+
 a {
   text-decoration: none;
   color: #fff;
@@ -144,7 +145,7 @@ nav {
 
   a {margin: 0 80px;}
   div{
-    width: 50%;
+    width: 100%;
 
     display: flex;
     justify-content: space-between;
@@ -153,9 +154,9 @@ nav {
 }
 
   div.search {
+    display: none;
     background-color: #000;
 
-    width: 50%;
     height: 40px;
 
     display: flex;
@@ -171,6 +172,7 @@ nav {
   }
 
   form {
+    display: none;
     width: 100%;
     left:0;
     padding: 5px;
@@ -228,7 +230,7 @@ section.artisthome{
 
   img{
     margin: 20px;
-    transform: translateY(-50%);
+    transform: translateY(-60%);
     max-width: 260px;
     height: 300px;
   }
@@ -356,6 +358,7 @@ section.split {
   transition: all 0.5s ease;
   z-index: 2;
 }
+
 footer {
   position: fixed;
   bottom: 0;
