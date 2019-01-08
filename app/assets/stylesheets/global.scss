@@ -54,10 +54,6 @@ a {
   text-decoration: none;
   color: #fff;
   font-family: 'BluuNextBold';
-
-  &:hover {
-    text-decoration: underline;
-  }
 }
 
 h1,
@@ -87,29 +83,23 @@ header {
   align-items: center;
 
   border: 5px solid #fff;
+  padding: 10px 15px;
   z-index: 2;
 
-  a.menu-button2 {display: none}
-  a.menu-button,
-  a.search,
-  a.switch,
-  a.menu-button2 {
-    img {
-      max-height: 24px;
-      margin: 0 20px;
-      transform: translateY(-5px);
-    }
+  img{
+    max-width: 600px;
+    transform: translateY(-6px);
+
   }
 
-  a.logo {
-    img {
-      max-width: 800px;
-      padding: none;
-      transform: translate(-10px,-13%);
-    }
-  }
+  nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 20vw;
 
-  h1 {letter-spacing: 5px;}
+    img {width: 25px;}
+  }
 }
 
 .show {transform: translateY(64px);}
@@ -158,40 +148,40 @@ section.hero{
   }
 }
 
-nav {
-  background-color: #000;
-
-  position: fixed;
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 40px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  border: 5px solid #fff;
-  border-top: none;
-  transition: transform 0.5s;
-
-  z-index: 1;
-
-  a {margin: 0 80px;}
-  div{
-    width: 50%;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-}
+// nav {
+//   background-color: #000;
+//
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//
+//   width: 100%;
+//   height: 40px;
+//
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//
+//   border: 5px solid #fff;
+//   border-top: none;
+//   transition: transform 0.5s;
+//
+//   z-index: 1;
+//
+//   a {margin: 0 80px;}
+//   div{
+//     width: 50%;
+//
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//   }
+// }
 
   div.search {
     background-color: #000;
 
-    width: 50%;
+    width: 100%;
     height: 40px;
 
     display: flex;
@@ -388,7 +378,7 @@ section.split {
   top: 0;
   right: 0;
 
-  width: 50%;
+  width: 100%;
   height: 100%;
 
   background-color: #fff;
