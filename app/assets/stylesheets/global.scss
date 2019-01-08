@@ -3,6 +3,14 @@
   src:  url(happy-times-at-the-ikob-webfont.woff2), url(happy-times-at-the-ikob-webfont.woff);
 }
 
+html * {
+  cursor: none !important;
+  -webkit-touch-callout: none !important;
+  -webkit-user-drag: none !important;
+  -webkit-user-select: none !important;
+  user-select: none !important;
+}
+
 body {
   font-family: 'Happy';
   color: #fff;
@@ -16,12 +24,40 @@ body {
   padding: 0;
 }
 
+div.cursor{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  z-index: 2;
+
+  border-radius: 50%;
+  transition: border 0.25s, background-color 0.25s, width 0.25s, height 0.25s;
+
+}
+
+
+div.cursor.is-down{
+  width: 60px;
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0);
+  border: solid 5px #fff;
+}
+
 a {
   text-decoration: none;
   color: #fff;
   font-family: 'BluuNextBold';
 
-  &:hover {text-decoration: underline;}
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 h1,
@@ -325,19 +361,25 @@ section.stuff {
 }
 
 section.about {
-  text-align: center;
-  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // text-align: center;
+  // margin: auto;
 
-  position: fixed;
-  top: 50%;
-  left: 50%;
-
-  transform: translate(-50%, -50%);
-  width: 90%;
+  // position: fixed;
+  // top: 50%;
+  // left: 50%;
+  //
+  // transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
 
   h3{
     font-family: 'Happy';
     text-align: center;
+    width: 90%;
+    transform: translateY(-15%);
   }
 }
 
@@ -371,7 +413,8 @@ footer {
 }
 
 // media queries
-@media (max-width: 1350px){
+// @media (max-width: 1350px){
+@media (max-width: 600px){
   section.home{
     flex-wrap: wrap;
     padding-top: 40vh;
@@ -383,7 +426,8 @@ footer {
   }
 }
 
-@media only screen and (max-width: 1200px) {
+// @media only screen and (max-width: 1200px) {
+@media (max-width: 700px){
   h1 {font-size: 70px;}
   h2 {font-size: 58px;}
   h3 {font-size: 48px;}

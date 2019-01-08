@@ -36,3 +36,44 @@ const button2 = document.querySelector('a.menu-button2')
 
     return false
   });
+
+
+// new mouse
+const cursor = document.querySelector('div.cursor')
+let isMouseDown = false
+
+const grow = function(){
+  cursor.classList.add('is-down')
+}
+
+const shrink = function(){
+   cursor.classList.remove('is-down')
+}
+
+const moveCursor = function(x, y){
+  cursor.style.left = x + 'px'
+  cursor.style.top = y + 'px'
+}
+
+document.addEventListener('mousedown', function(event){
+  isMouseDown = true
+  grow()
+})
+
+document.addEventListener('mouseup', function(){
+  isMouseDown = false
+  shrink()
+})
+
+document.addEventListener('mousemove', function(event){
+  moveCursor(event.pageX, event.pageY)
+  // console.log(event)
+})
+
+$('a').on('mouseenter', function(){
+  $('.cursor').addClass('is-down')
+})
+
+$('a').on('mouseleave', function(){
+  $('.cursor').removeClass('is-down')
+})
