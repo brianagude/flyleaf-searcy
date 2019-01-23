@@ -62,6 +62,21 @@
         </td>
       </tr>
     </table>
-    <%= link_to "BACK TO ALL BOOKS", products_path%>
+
+    <div class='navlinks'>
+      <% if @prev %>
+        <%= link_to "Previous", @prev %>
+      <% else %>
+        <%= link_to "Previous", '#', :class => "strike"%>
+      <% end %>
+
+      <%= link_to "All Books", products_path%>
+
+      <% if @next %>
+        <%= link_to "Next", @next %>
+      <% else %>
+        <%= link_to "Next", '#', :class => "strike" %>
+      <% end %>
+    </div>
     </div>
 </section>
