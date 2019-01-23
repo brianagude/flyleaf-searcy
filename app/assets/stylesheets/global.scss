@@ -1,20 +1,16 @@
 // fonts
 @font-face {
   font-family: "bluu";
-  src: url("bluunext-bold-webfont.woff2") format("woff2"),
-    url("bluunext-bold-webfont.woff") format("woff"),
-    url("BluuNext-Bold.otf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
+  src: asset-url("bluunext-bold-webfont.woff2"),
+    asset-url("bluunext-bold-webfont.woff"),
+    asset-url("BluuNext-Bold.otf");
 }
 
 @font-face {
   font-family: "happy";
-  src: url("happy-times-at-the-ikob-webfont.woff2") format("woff2"),
-    url("happy-times-at-the-ikob-webfont.woff") format("woff"),
-    url("happy-times-at-the-ikob.otf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
+  src: asset-url("happy-times-at-the-ikob-webfont.woff2"),
+    asset-url("happy-times-at-the-ikob-webfont.woff"),
+    asset-url("happy-times-at-the-ikob.otf");
 }
 
 // mixins
