@@ -1,10 +1,10 @@
-<section class="stuff">
+<section class="artist">
   <div class="content">
     <%= image_tag @artist.image.url %>
   </div>
 
   <div class="info">
-      <table class="data">
+      <table>
         <tr>
           <td colSpan = "2"> <h4><%= @artist.name %></h4> </td>
         </tr>
@@ -24,7 +24,24 @@
           <% if @artist.twitter.present? %>
             <td><p><%= link_to 'twitter', @artist.twitter, target: :_blank %></p></td>
           <% end %>
+          </tr>
+          <tr class='navlinks'>
+            <td colSpan = "2"> <% if @prev %>
+              <%= link_to "Previous", @prev %>
+            <% else %>
+              <%= link_to "Previous", '#', :class => "strike"%>
+            <% end %>
+
+            <%= link_to "All Artists", artists_path%>
+
+            <% if @next %>
+              <%= link_to "Next", @next %>
+            <% else %>
+              <%= link_to "Next", '#', :class => "strike" %>
+            <% end %> </td>
+          </tr>
     </table>
-    <%= link_to "BACK TO ALL ARTISTS", artists_path%>
+
+
     </div>
 </section>

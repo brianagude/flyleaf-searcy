@@ -17,7 +17,10 @@
         <%= link_to 'Books', products_path %>
         <%= link_to 'Artists', artists_path %>
         <%= link_to 'About', about_path %>
-        <%# <%= link_to image_tag('search.png'), "#", class: "search strikethrough" %>
+        <div>
+          <%= link_to image_tag('search.png'), "#", class: "search" %>
+          <%= link_to image_tag('menu.png'), "#", class: "menu mobile" %>
+        </div>
       </nav>
     </header>
 
