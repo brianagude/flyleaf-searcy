@@ -9,5 +9,7 @@ class ArtistsController < ApplicationController
 
   def show
     @artist = Artist.find(params[:id])
+    @prev = Artist.where("id < ?", params[:id]).order(:id).last
+    @next = Artist.where("id > ?", params[:id]).order(:id).first
   end
 end

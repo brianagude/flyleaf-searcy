@@ -1,19 +1,4 @@
-<%= render 'header' %>
-
-<nav>
-  <div class= "search">
-    <form action="">
-      <input type="text" name="q" value="<%= params[:q] %>" placeholder="Search Books">
-    </form>
-  </div>
-  <div>
-    <%= link_to 'Books', products_path %>
-    <%= link_to 'Artists', artists_path %>
-    <%= link_to 'About', about_path %>
-  </div>
-</nav>
-
-<section class="home">
+<section class="products">
   <% @products.each do |product| %>
     <%= link_to product_path(product) do%>
       <%= image_tag product.image_1.url %>
