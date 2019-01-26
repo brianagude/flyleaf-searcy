@@ -36,6 +36,12 @@
   left: $left;
 }
 
+@mixin mq($screen) {
+  @media only screen and (max-device-width: $screen) {
+    @content;
+  }
+}
+
 // styles
 html * {
   font-size: 18px;
@@ -44,6 +50,9 @@ html * {
   -webkit-user-drag: none !important;
   -webkit-user-select: none !important;
   user-select: none !important;
+  @include mq(812px) {
+    font-size: 24px;
+  }
 }
 
 body {
@@ -112,6 +121,9 @@ a {
 }
 
 header {
+  @include mq(812px) {
+    height: 80px;
+  }
   @include border();
   @include flex(space-between);
   @include position(0);
@@ -120,20 +132,32 @@ header {
   width: 100%;
   height: 64px;
   padding: 10px 15px;
-  z-index: 2;
+  z-index: 5;
 
-  img {
+  a.menu {
+    display: none;
+    width: 30px;
+    height: 30px;
+    @include mq(812px) {
+      display: flex;
+    }
+  }
+
+  a.logo {
     max-width: 600px;
     transform: translateY(-6px);
+    margin: 0;
+    @include mq(812px) {
+      max-width: 800px;
+    }
   }
 
   nav {
-    @include flex(space-between);
-    width: 20vw;
-
-    .mobile {
+    @include mq(812px) {
       display: none;
     }
+    @include flex(space-between);
+    width: 20vw;
 
     img {
       width: 25px;
@@ -149,14 +173,17 @@ header {
   }
 }
 
-.show {
-  transform: translateY(64px);
+.show-menu {
+  transform: translateY(-100%);
 }
 .switch {
   transform: translateX(-100%);
 }
 
 div.cursor {
+  @include mq(812px) {
+    display: none;
+  }
   position: absolute;
   top: 50%;
   left: 50%;
@@ -167,13 +194,16 @@ div.cursor {
   background-color: #fff;
   mix-blend-mode: difference;
   pointer-events: none;
-  z-index: 2;
+  z-index: 10;
 
   border-radius: 50%;
   transition: border 0.25s, background-color 0.25s, width 0.25s, height 0.25s;
 }
 
 div.cursor.is-down {
+  @include mq(812px) {
+    display: none;
+  }
   width: 60px;
   height: 60px;
   background-color: rgba(0, 0, 0, 0);
@@ -239,39 +269,21 @@ section.hero {
   @include flex(center);
   @include position(0);
   @include size(100%);
+  padding-top: 64px;
   flex-wrap: wrap;
 
   img {
+    // margin-top: 100px;
     max-width: 1300px;
     margin: auto;
-  }
-
-  @keyframes ringRotate {
-    0% {
-      transform: rotateZ(0deg) rotateX(0deg) rotateY(0deg);
-    }
-    15% {
-      transform: rotateZ(45deg) rotateX(45deg) rotateY(45deg);
-    }
-    30% {
-      transform: rotateZ(45deg) rotateX(90deg) rotateY(90deg);
-    }
-    45% {
-      transform: rotateZ(45deg) rotateX(135deg) rotateY(135deg);
-    }
-    60% {
-      transform: rotateZ(45deg) rotateX(90deg) rotateY(180deg);
-    }
-    75% {
-      transform: rotateZ(45deg) rotateX(45deg) rotateY(225deg);
-    }
-    100% {
-      transform: rotateZ(45deg) rotateX(0deg) rotateY(270deg);
+    @include mq(812px) {
+      max-width: 90vw;
     }
   }
 }
 
 section.artists {
+  @include border();
   @include flex(center);
   @include size(100%);
   padding: 50vh 10px 0 10px;
@@ -281,6 +293,21 @@ section.artists {
     transform: translateY(-50%);
     max-width: 260px;
     height: 300px;
+  }
+
+  @include mq(812px) {
+    // @include border();
+    @include flex(center);
+    flex-wrap: wrap;
+    @include size(100%);
+    padding: 50px;
+    padding-top: 500px;
+
+    img {
+      margin: 50px 20px;
+      max-width: 1000px;
+      height: 800px;
+    }
   }
 }
 
@@ -296,6 +323,12 @@ section.products {
   padding-top: 50vh;
   margin: 0;
 
+  div.info,
+  div.navlinks {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
   img {
     transform: translateY(-60%);
     padding: 0;
@@ -307,6 +340,16 @@ section.products {
       border: solid 5px #fff;
     }
   }
+  @include mq(812px) {
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 600px;
+    // background-color: green;
+
+    img {
+      max-width: 80vw;
+    }
+  }
 }
 
 section.artist,
@@ -316,25 +359,39 @@ section.product {
   width: 50vw;
   @include border();
   min-height: 100vh;
-  height: 100%;
+  max-height: 100%;
+
+  @include mq(812px) {
+    width: 100vw;
+    background: none;
+  }
 
   div {
     @include border();
+    @include size(50%);
     margin-top: 0;
     padding-top: 0;
     border-top: none;
+
+    @include mq(812px) {
+      width: 100vw;
+    }
   }
 
   div.content {
     @include flex(center);
     @include position(0);
-    @include size(50%);
 
     border-top: none;
     padding-top: 100px;
 
     flex-wrap: wrap;
     overflow-y: scroll;
+    @include mq(812px) {
+      z-index: 2;
+      background: none;
+      padding: 50vh 0;
+    }
 
     img {
       border: solid 5px #fff;
@@ -342,11 +399,14 @@ section.product {
       padding: 0;
       max-width: 500px;
       max-height: 500px;
+      @include mq(812px) {
+        // height: 800px;
+        // width: 800px;
+      }
     }
   }
 
   div.info {
-    @include size(50%);
     @include position(50%);
     @include flex(center);
     @include border();
@@ -359,6 +419,13 @@ section.product {
 
     text-align: center;
     border-left: none;
+
+    @include mq(812px) {
+      left: 0;
+      height: 100%;
+      overflow: hidden;
+      // padding: 20px;
+    }
 
     table {
       width: 100%;
@@ -382,6 +449,18 @@ section.product {
 }
 
 section.artist {
+  @include mq(812px) {
+    div.content {
+      align-items: flex-start;
+      padding: 10vh 0;
+      height: 100vh;
+
+      img {
+        max-width: 800px;
+      }
+    }
+  }
+
   table {
     td {
       p,
@@ -398,7 +477,6 @@ section.artist {
       margin: 0 10px;
     }
     tr.navlinks a.strike {
-      // text-decoration: line-through;
       opacity: 0.5;
       &:hover {
         text-decoration: none;
@@ -444,6 +522,35 @@ section.product {
   }
 }
 
+section.menu {
+  display: none !important;
+  @include mq(812px) {
+    display: flex !important;
+  }
+  @include position(0);
+  @include size(100%);
+  @include border();
+  @include flex(center);
+  transition: transform 1s;
+  background: rgba(155, 155, 155, 0.7);
+  mix-blend-mode: difference;
+  flex-wrap: wrap;
+  z-index: 3;
+  div {
+    @include flex(center);
+    flex-wrap: wrap;
+    text-align: center;
+    width: 100%;
+    margin: 20px;
+    a {
+      display: block;
+      width: 100%;
+      font-size: 5em;
+      margin: 30px 0;
+    }
+  }
+}
+
 section.split {
   display: none;
   @include position(0);
@@ -465,277 +572,19 @@ footer {
   width: 100%;
   height: 40px;
   padding: 25px 20px;
+
+  @include mq(812px) {
+    justify-content: center;
+    flex-wrap: wrap;
+    height: auto;
+    padding: 15px 10px;
+    p {
+      display: block;
+      width: 100%;
+      text-align: center;
+      line-height: 0.5em;
+    }
+  }
 }
 
 // media queries
-// @media (max-width: 1350px){
-@media (max-width: 600px) {
-  section.home {
-    flex-wrap: wrap;
-    padding-top: 40vh;
-  }
-
-  section.artisthome {
-    justify-content: space-between;
-    padding-top: 40vh;
-  }
-}
-
-// @media only screen and (max-width: 1200px) {
-@media (max-width: 700px) {
-  h1 {
-    font-size: 70px;
-  }
-  h2 {
-    font-size: 58px;
-  }
-  h3 {
-    font-size: 48px;
-  }
-  h4 {
-    font-size: 58px;
-  }
-  h5 {
-    font-size: 43px;
-  }
-  a,
-  p {
-    font-size: 48px;
-  }
-
-  header {
-    display: flex;
-    height: 100px;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
-
-    a.search,
-    a.switch,
-    a.menu-button {
-      display: none;
-    }
-    a.logo img {
-      max-width: 950px;
-      transform: translateY(-50%);
-      x-transition: all 1s;
-      animation: move 5s linear infinite;
-    }
-
-    @keyframes move {
-      0% {
-        transform: translateX(-100%);
-      }
-      50% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(100%);
-      }
-    }
-  }
-
-  .show {
-    display: flex;
-  }
-  .switch {
-    transform: translateY(-100%);
-  }
-
-  section.hero {
-    border: 5px solid #fff;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-
-    div {
-      width: 50%;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      margin: none;
-
-      transform: translateY(10vh);
-
-      a {
-        font-size: 34px;
-      }
-    }
-
-    img {
-      max-width: 800px;
-      margin: auto;
-      transform: translateY(-25vh);
-    }
-  }
-
-  nav {
-    div.search {
-      display: none;
-    }
-    background-color: #000;
-
-    position: fixed;
-    top: 100px;
-    left: 0;
-
-    width: 100%;
-    height: 80px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    border: 5px solid #fff;
-    border-top: none;
-    transition: transform 0.5s;
-    z-index: 10;
-    a {
-      margin: 0 80px;
-      font-size: 40px;
-    }
-
-    a {
-      margin: 0 80px;
-    }
-    div {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  }
-
-  section.home {
-    display: flex;
-    border: 5px solid #fff;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-
-    top: 0;
-    left: 0;
-    position: relative;
-
-    padding: 680px 0 0 0;
-    margin: 0;
-    width: 100vw;
-    height: 100%;
-    min-height: 100vh;
-
-    img {
-      max-width: 800px;
-      margin: auto;
-      transform: translateY(-25vh);
-      margin-bottom: 80px;
-    }
-  }
-
-  section.artisthome {
-    img {
-      max-width: 800px;
-    }
-  }
-
-  section.stuff {
-    display: flex;
-    flex-direction: column-reverse;
-    width: 100vw;
-    top: 0;
-
-    div {
-      margin-top: 0;
-      padding-top: 0;
-
-      width: 100%;
-    }
-
-    div.content {
-      height: 100%;
-      min-height: 100vh;
-      top: 0;
-      left: 0;
-
-      padding-top: 100px;
-      padding-bottom: 100px;
-
-      background-color: rgba(0, 0, 0, 0);
-      z-index: 2;
-
-      img {
-        height: 900px;
-      }
-    }
-
-    div.info {
-      height: 100%;
-      min-height: 300px;
-      max-height: 100%;
-      padding: 200px 0 40px 0;
-
-      border-top: none;
-      border-bottom: none;
-
-      a {
-        font-size: 40px;
-      }
-
-      table {
-        td {
-          p,
-          h4,
-          a {
-            font-size: 30px;
-          }
-          margin-bottom: 40px;
-        }
-      }
-
-      table.data {
-        margin-top: 100px;
-      }
-    }
-  }
-
-  section.about {
-    text-align: center;
-    position: fixed;
-    width: 80%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  section.split {
-    display: none;
-    top: 50%;
-    right: 50%;
-
-    width: 100%;
-    height: 20%;
-
-    transform: translate(50%, 50%);
-  }
-
-  footer {
-    height: 224px;
-    padding: 5px;
-    margin-bottom: 30px;
-
-    justify-content: center;
-    flex-wrap: wrap;
-
-    p {
-      width: 100%;
-      text-align: center;
-      margin: 5px;
-    }
-  }
-}
