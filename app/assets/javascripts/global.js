@@ -5,11 +5,11 @@ const menu = document.querySelector("section.menu");
 $(button).click(function() {
   $(menu).toggleClass("show-menu");
 
-  if (menu.classList.contains("show-menu")) {
-    button.innerHTML = `<img src="assets/menu.svg"> `;
-  } else {
-    button.innerHTML = `<img src="assets/x.svg"> `;
-  }
+  // if (menu.classList.contains("show-menu")) {
+  //   button.innerHTML = `<img src="assets/menu.svg"> `;
+  // } else {
+  //   button.innerHTML = `<img src="assets/x.svg"> `;
+  // }
 
   return false;
 });
