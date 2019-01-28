@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
     if params[:q].present?
       @products = Product.where('lower(title) LIKE ?', '%' + params[:q].downcase + '%')
     else
-      @products = Product.all.order(:title)
+      @products = Product.all.order(:id)
     end
   end
 
