@@ -76,8 +76,6 @@ h2,
 h3,
 h4,
 h5 {
-  // margin: 2.75rem 0 1rem;
-  // margin: 0.75rem 0;
   font-family: "happy";
   font-weight: 400;
   line-height: 1.15;
@@ -114,10 +112,6 @@ a {
   text-decoration: none;
   color: #fff;
   font-family: "bluu";
-
-  // &:hover {
-  //   text-decoration: line-through;
-  // }
 }
 
 header {
@@ -273,7 +267,6 @@ section.hero {
   flex-wrap: wrap;
 
   img {
-    // margin-top: 100px;
     max-width: 1300px;
     margin: auto;
     @include mq(812px) {
@@ -286,17 +279,17 @@ section.artists {
   @include border();
   @include flex(center);
   @include size(100%);
-  padding: 50vh 10px 0 10px;
+  padding: 56px 10px 0 10px;
 
   img {
+    margin-top: 5px;
     margin: 20px;
-    transform: translateY(-50%);
+    // transform: translateY(-64px);
     max-width: 260px;
     height: 300px;
   }
 
   @include mq(812px) {
-    // @include border();
     @include flex(center);
     flex-wrap: wrap;
     @include size(100%);
@@ -318,6 +311,7 @@ section.products {
 
   top: 0;
   left: 0;
+  height: 100vh;
 
   padding: 0 20px;
   padding-top: 50vh;
@@ -333,7 +327,7 @@ section.products {
     transform: translateY(-60%);
     padding: 0;
     max-width: 300px;
-    margin: 20px 20px 50px 20px;
+    margin: 64px 20px 50px 20px;
     z-index: 1;
 
     &:hover {
@@ -344,7 +338,6 @@ section.products {
     justify-content: center;
     flex-wrap: wrap;
     padding-top: 600px;
-    // background-color: green;
 
     img {
       max-width: 80vw;
@@ -369,8 +362,8 @@ section.product {
   div {
     @include border();
     @include size(50%);
-    margin-top: 0;
-    padding-top: 0;
+    margin: 0;
+    padding: 0;
     border-top: none;
 
     @include mq(812px) {
@@ -384,6 +377,8 @@ section.product {
 
     border-top: none;
     padding-top: 100px;
+    padding-bottom: 0;
+    margin-bottom: 0;
 
     flex-wrap: wrap;
     overflow-y: scroll;
@@ -400,8 +395,6 @@ section.product {
       max-width: 500px;
       max-height: 500px;
       @include mq(812px) {
-        // height: 800px;
-        // width: 800px;
       }
     }
   }
@@ -411,7 +404,7 @@ section.product {
     @include flex(center);
     @include border();
     margin-top: 0;
-    padding: 80px 0 40px 0;
+    padding: 80px 0 0 0;
     // background-color: yellow;
 
     overflow-y: scroll;
@@ -427,9 +420,17 @@ section.product {
       // padding: 20px;
     }
 
+    div.navlinks {
+      // background: orange;
+      height: 50px;
+      padding: 0;
+      margin: 0;
+    }
+
     table {
       width: 100%;
       border-collapse: collapse;
+      // background: pink;
 
       margin: 0;
       padding: 0;
@@ -531,6 +532,7 @@ section.menu {
   @include size(100%);
   @include border();
   @include flex(center);
+  // transform: translateX(-100%);
   transition: transform 1s;
   background: rgba(155, 155, 155, 0.7);
   mix-blend-mode: difference;

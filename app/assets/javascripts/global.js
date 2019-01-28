@@ -6,31 +6,13 @@ $(button).click(function() {
   $(menu).toggleClass("show-menu");
 
   if (menu.classList.contains("show-menu")) {
-    button.innerHTML = `<img src="assets/menu.png"> `;
+    button.innerHTML = `<img src="assets/menu.svg"> `;
   } else {
-    button.innerHTML = `<img src="assets/x.png"> `;
+    button.innerHTML = `<img src="assets/x.svg"> `;
   }
 
   return false;
 });
-
-// button.addEventListener("click", function() {
-//   mainTag.classList.toggle("open");
-//
-//   if (mainTag.classList.contains("open")) {
-//     toggleTag.innerHTML = `<img src="close.svg"> Close`;
-//   } else {
-//     toggleTag.innerHTML = `<img src="menu.svg"> Open`;
-//   }
-// });
-// const menu = document.querySelector('nav')
-// const button = document.querySelector('a.menu-button')
-//
-//   $(button).click(function(){
-//     $(menu).toggleClass("show");
-//
-//     return false
-//   });
 
 // toggle search
 const search = document.querySelector("div.search");

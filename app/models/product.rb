@@ -14,4 +14,12 @@ class Product < ApplicationRecord
   def to_param
     id.to_s + '-' + title.parameterize
   end
+
+  def next
+    self.class.where("id > ?", id).first
+  end
+
+  def previous
+    self.class.where("id < ?", id).last
+  end
 end

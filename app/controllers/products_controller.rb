@@ -9,7 +9,9 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    @prev = Product.where("title < ?", params[:title]).order(:title).last
-    @next = Product.where("title > ?", params[:title]).order(:title).first
+    @prev = @product.previous
+    @next = @product.next
+    # @prev = Product.where("id < ?", params[:id]).order(:id).last
+    # @next = Product.where("id > ?", params[:id]).order(:id).first
   end
 end
