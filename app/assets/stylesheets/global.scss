@@ -351,9 +351,14 @@ section.products {
   @include mq(812px) {
     justify-content: center;
     flex-wrap: wrap;
-    padding-top: 500px;
+    padding-top: 350px;
+    // margin-top: 0;
     min-height: 100vh;
     height: 100%;
+
+    div.content {
+      pointer-events: none;
+    }
 
     img {
       max-width: 90vw;
