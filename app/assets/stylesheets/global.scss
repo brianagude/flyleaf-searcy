@@ -646,12 +646,11 @@ footer {
     div.navlinks {
       display: none;
     }
-
-    // section.menu {
-    //   display: flex !important;
-    //   div {
-    //     transform: translateY(-100px);
-    //   }
+  }
+  section.menu {
+    display: flex !important;
+    // div {
+    //   transform: translateY(-100px);
     // }
   }
 
