@@ -51,7 +51,7 @@ html * {
   -webkit-user-select: none !important;
   user-select: none !important;
   @include mq(812px) {
-    font-size: 24px;
+    font-size: 32px;
   }
 }
 
@@ -130,8 +130,9 @@ header {
 
   a.menu {
     display: none;
-    width: 50px;
-    height: 50px;
+    max-width: 1000px;
+    transform: translateY(-6px);
+    margin: 0;
     @include mq(812px) {
       display: flex;
     }
@@ -142,7 +143,7 @@ header {
     transform: translateY(-6px);
     margin: 0;
     @include mq(812px) {
-      max-width: 850px;
+      display: none;
     }
   }
 
@@ -263,7 +264,7 @@ section.hero {
   @include flex(center);
   @include position(0);
   @include size(100%);
-  // padding-top: 64px;
+  padding-top: 64px;
   flex-wrap: wrap;
 
   img {
@@ -271,6 +272,7 @@ section.hero {
     margin: auto;
     @include mq(812px) {
       max-width: 90vw;
+      transform: translateY(-100%);
     }
   }
 }
@@ -294,7 +296,7 @@ section.artists {
     flex-wrap: wrap;
     @include size(100%);
     padding: 50px;
-    padding-top: 500px;
+    padding-top: 300px;
 
     img {
       margin: 50px 20px;
@@ -308,6 +310,7 @@ section.products {
   @include border();
   @include flex(space-between);
   @include size(100vw);
+  // background-color: pink;
 
   top: 0;
   left: 0;
@@ -327,7 +330,7 @@ section.products {
     transform: translateY(-60%);
     padding: 0;
     max-width: 300px;
-    margin: 64px 20px 50px 20px;
+    margin: 50px 20px;
     z-index: 1;
 
     &:hover {
@@ -338,9 +341,16 @@ section.products {
     justify-content: center;
     flex-wrap: wrap;
     padding-top: 600px;
+    min-height: 100vh;
+    height: 100%;
 
     img {
-      max-width: 80vw;
+      max-width: 90vw;
+    }
+
+    img:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
     }
   }
 }
@@ -392,9 +402,10 @@ section.product {
       border: solid 5px #fff;
       margin: 0 50px 50px 50px;
       padding: 0;
-      max-width: 500px;
-      max-height: 500px;
+      max-width: 600px;
+      max-height: 600px;
       @include mq(812px) {
+        margin-top: 150px;
       }
     }
   }
@@ -425,9 +436,16 @@ section.product {
       height: 50px;
       padding: 0;
       margin: 0;
+
+      @include mq(812px) {
+        // transform: translateY(-100%);
+      }
     }
 
     table {
+      @include mq(812px) {
+        margin-top: 50px;
+      }
       width: 100%;
       border-collapse: collapse;
       // background: pink;
@@ -443,6 +461,9 @@ section.product {
         a {
           font-size: 24px;
           font-family: "happy";
+          @include mq(812px) {
+            font-size: 32px;
+          }
         }
       }
     }
@@ -457,7 +478,7 @@ section.artist {
       height: 100vh;
 
       img {
-        max-width: 800px;
+        max-width: 1000px;
       }
     }
   }
