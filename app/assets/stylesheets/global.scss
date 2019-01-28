@@ -260,6 +260,7 @@ section.about {
   @include flex(center);
   @include size(100vw);
   @include border();
+  position: fixed;
 
   h3 {
     font-family: "happy";
@@ -282,7 +283,7 @@ section.hero {
     margin: auto;
     @include mq(812px) {
       max-width: 90vw;
-      transform: translateY(-100%);
+      transform: translateY(-80%);
     }
   }
 }
@@ -309,7 +310,7 @@ section.artists {
     padding-top: 300px;
 
     img {
-      margin: 50px 20px;
+      margin: 80px 20px;
       max-width: 1000px;
       height: 800px;
     }
@@ -350,7 +351,7 @@ section.products {
   @include mq(812px) {
     justify-content: center;
     flex-wrap: wrap;
-    padding-top: 400px;
+    padding-top: 500px;
     min-height: 100vh;
     height: 100%;
 
@@ -473,7 +474,7 @@ section.product {
           font-size: 24px;
           font-family: "happy";
           @include mq(812px) {
-            font-size: 48px;
+            font-size: 32px;
           }
         }
       }
@@ -485,12 +486,16 @@ section.artist {
   @include mq(812px) {
     div.content {
       align-items: flex-start;
-      padding: 10vh 0;
-      height: 100vh;
+      padding: 0;
+      height: 100%;
 
       img {
         max-width: 1000px;
       }
+    }
+
+    div.info {
+      margin-top: 100px;
     }
   }
 
@@ -507,7 +512,8 @@ section.artist {
       }
     }
     tr.navlinks a {
-      margin: 0 10px;
+      margin: 0 20px;
+      font-family: "bluu";
     }
     tr.navlinks a.strike {
       opacity: 0.5;
