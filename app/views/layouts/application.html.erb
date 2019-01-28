@@ -12,9 +12,9 @@
 
     <header>
       <%= link_to image_tag('logo.png'), root_path, class: "logo"%>
-      <%= link_to image_tag('logo.png'), '#', class: "menu"%>
-        <%# <%= link_to image_tag('menu.svg'), "#", class: "menu" %>
-        <%# <%= link_to image_tag('search.svg'), "#", class: "search" %>
+      <%= link_to 'ALTFPB', root_path, class: "menu-logo"%>
+      <%= link_to image_tag('menu.svg'), "#", class: "menu"%>
+      <%# <%= link_to image_tag('search.svg'), "#", class: "search" %>
       <nav>
         <%= link_to 'Books', products_path %>
         <%= link_to 'Artists', artists_path %>

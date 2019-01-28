@@ -61,6 +61,22 @@
           <h4> To purchase, please hit us at <%= mail_to 'yo@flyleaf.org', 'yo@flyleaf.org' %></h4>
         </td>
       </tr>
+      <tr class='mobile'>
+        <tr>
+          <td colspan="2"><% if @prev %>
+            <%= link_to "Previous", @prev %>
+          <% else %>
+            <%= link_to "Previous", '#', :class => "strike"%>
+          <% end %>
+
+          <%= link_to "All Books", products_path%>
+
+          <% if @next %>
+            <%= link_to "Next", @next %>
+          <% else %>
+            <%= link_to "Next", '#', :class => "strike" %>
+          <% end %></td>
+      </tr>
     </table>
 
     <div class='navlinks'>

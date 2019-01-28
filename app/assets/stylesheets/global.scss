@@ -128,9 +128,19 @@ header {
   padding: 10px 15px;
   z-index: 5;
 
+  a.menu-logo {
+    display: none;
+    font-size: 80px;
+
+    @include mq(812px) {
+      display: flex;
+    }
+  }
+
   a.menu {
     display: none;
-    max-width: 1000px;
+    width: 80px;
+    padding: 5px;
     transform: translateY(-6px);
     margin: 0;
     @include mq(812px) {
@@ -340,12 +350,13 @@ section.products {
   @include mq(812px) {
     justify-content: center;
     flex-wrap: wrap;
-    padding-top: 600px;
+    padding-top: 400px;
     min-height: 100vh;
     height: 100%;
 
     img {
       max-width: 90vw;
+      margin: 80px 20px;
     }
 
     img:last-child {
@@ -462,7 +473,7 @@ section.product {
           font-size: 24px;
           font-family: "happy";
           @include mq(812px) {
-            font-size: 32px;
+            font-size: 48px;
           }
         }
       }
@@ -508,6 +519,11 @@ section.artist {
 }
 
 section.product {
+  div.info {
+    @include mq(812px) {
+      padding-top: 0;
+    }
+  }
   table {
     p {
       text-align: left;
@@ -518,12 +534,20 @@ section.product {
       text-align: right;
     }
 
+    tr:last-child a {
+      margin: 0 20px;
+      font-family: "bluu";
+    }
+
     td:nth-child(odd) {
       width: 45%;
     }
   }
 
   div.navlinks {
+    @include mq(812px) {
+      display: none;
+    }
     @include flex(center);
     margin-top: 40px;
     border: none;
