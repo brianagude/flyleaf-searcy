@@ -12,7 +12,8 @@
 
 @mixin size($width) {
   width: $width;
-  // min-height: 100vh;
+  min-width: 100vw;
+  min-height: 100vh;
   height: 100%;
 }
 
@@ -228,7 +229,7 @@
   section.products {
     @include border();
     @include flex(center);
-    @include size(100vw);
+    @include size(100%);
     flex-wrap: wrap;
     padding-top: 600px;
     min-height: 100vh;
@@ -309,6 +310,7 @@
       border-left: none;
 
       div.navlinks {
+        display: none;
         // background: orange;
         height: 50px;
         padding: 0;
@@ -338,7 +340,12 @@
   }
 
   section.artist {
+    img {
+      max-width: 80%;
+      max-height: 80%;
+    }
     table {
+      margin-top: 40px;
       td {
         p,
         h4,
@@ -509,11 +516,9 @@
   section.products {
     @include border();
     @include flex(center);
-    @include size(100vw);
+    @include size(100%);
     align-items: flex-start;
     flex-wrap: wrap;
-    min-height: 100vh;
-    height: 100%;
     padding: 30vh 20px 0 20px;
     margin: 0;
 
