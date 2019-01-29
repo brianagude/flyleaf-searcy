@@ -27,7 +27,7 @@
 @mixin size($width) {
   width: $width;
   min-height: 100vh;
-  max-height: 100%;
+  height: 100%;
 }
 
 @mixin position($left) {
@@ -254,7 +254,7 @@ section.hero {
   flex-wrap: wrap;
 
   img {
-    max-width: 1300px;
+    width: 90vw;
     margin: auto;
   }
 }
@@ -264,6 +264,7 @@ section.artists {
   @include flex(center);
   @include size(100%);
   padding: 56px 10px 0 10px;
+  flex-wrap: wrap;
 
   img {
     margin-top: 5px;
@@ -276,8 +277,9 @@ section.artists {
 
 section.products {
   @include border();
-  @include flex(space-between);
+  @include flex(center);
   @include size(100vw);
+  flex-wrap: wrap;
   // background-color: pink;
 
   top: 0;
@@ -287,12 +289,6 @@ section.products {
   padding: 0 20px;
   padding-top: 50vh;
   margin: 0;
-
-  div.info,
-  div.navlinks {
-    margin-bottom: 0;
-    padding-bottom: 0;
-  }
 
   img {
     transform: translateY(-60%);
@@ -504,166 +500,4 @@ footer {
   width: 100%;
   height: 40px;
   padding: 25px 20px;
-}
-
-// media queries
-
-// phones
-@include mq(812px) {
-  html * {
-    font-size: 32px;
-  }
-  header {
-    height: 120px;
-
-    a.menu-logo,
-    a.menu {
-      display: flex;
-    }
-    a.logo,
-    nav {
-      display: none;
-    }
-  }
-
-  div.cursor,
-  div.cursor.is-down {
-    display: none;
-  }
-
-  section.hero img {
-    max-width: 90vw;
-    transform: translateY(-80%);
-  }
-
-  section.about h3 {
-    font-size: 54px;
-    width: 80%;
-    transform: translateY(-30%);
-  }
-
-  section.artists {
-    @include flex(center);
-    flex-wrap: wrap;
-    @include size(100%);
-    padding: 50px;
-    padding-top: 300px;
-
-    img {
-      margin: 80px 20px;
-      max-width: 1000px;
-      height: 800px;
-    }
-  }
-
-  section.products {
-    justify-content: center;
-    flex-wrap: wrap;
-    padding-top: 600px;
-    min-height: 100vh;
-    height: 100%;
-
-    img {
-      max-width: 90vw;
-      margin: 80px 20px;
-    }
-
-    img:last-child {
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
-  }
-
-  section.artist,
-  section.product {
-    @include flex(flex-start);
-    width: 100vw;
-    background: none;
-
-    div {
-      width: 100vw;
-    }
-
-    div.content {
-      z-index: 2;
-      background: none;
-      padding: 50vh 0;
-
-      img {
-        margin-top: 150px;
-      }
-    }
-
-    div.info {
-      left: 0;
-      height: 100%;
-      overflow: hidden;
-
-      table {
-        margin-top: 0;
-        p,
-        h4,
-        a {
-          font-size: 32px;
-        }
-      }
-    }
-  }
-
-  section.artist {
-    padding-top: 30px;
-    div.content {
-      align-items: flex-start;
-      padding: 0;
-      height: 100%;
-      pointer-events: none;
-
-      img {
-        max-width: 1000px;
-      }
-    }
-
-    div.info {
-      margin-top: 100px;
-    }
-  }
-
-  section.product {
-    // background: green;
-    // z-index: 2;
-    // min-height: 100%;
-    // height: 100%;
-    div.info {
-      display: flex;
-      align-items: flex-start;
-      padding-top: 160px;
-      // background-color: green;
-      // height: 800px !important;
-    }
-    div.content {
-      // display: none;
-    }
-    div.navlinks {
-      display: none;
-    }
-  }
-  section.menu {
-    display: flex !important;
-    // div {
-    //   transform: translateY(-100px);
-    // }
-  }
-
-  footer {
-    justify-content: center;
-    flex-wrap: wrap;
-    height: auto;
-    padding: 15px 10px;
-    p {
-      display: block;
-      width: 100%;
-      text-align: center;
-      line-height: 0.5em;
-    }
-  }
 }
