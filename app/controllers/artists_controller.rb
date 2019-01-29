@@ -3,7 +3,7 @@ class ArtistsController < ApplicationController
     if params[:q].present?
       @artists = Artist.where('lower(name) LIKE ?', '%' + params[:q].downcase + '%')
     else
-      @artists = Artist.all
+      @artists = Artist.all.order(:id)
     end
   end
 

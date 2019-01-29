@@ -464,29 +464,45 @@
   header {
     nav {
       @include flex(flex-end);
-      width: 25vw;
+      width: 20vw;
+
+      padding-right: 0;
       a {
         margin: 0 10px;
+        // padding: 0;
+        // text-align: right;
+        // background: pink;
+        transform: translateX(10px);
       }
+      // a:last-child {
+      //   margin-right: 0;
+      // }
     }
   }
   div.cursor {
     display: none;
   }
 
+  section.about h3 {
+    font-size: 54px;
+    width: 80%;
+    transform: translateY(-30%);
+  }
+
   section.artists {
     @include border();
     @include flex(center);
     @include size(100%);
+    align-items: flex-start;
     flex-wrap: wrap;
     padding: 56px 10px 0 10px;
 
     img {
       margin-top: 5px;
-      margin: 20px;
+      margin: 50px;
       // transform: translateY(-64px);
-      max-width: 260px;
-      height: 300px;
+      max-width: 5000px;
+      height: 500px;
     }
   }
 
@@ -494,24 +510,17 @@
     @include border();
     @include flex(center);
     @include size(100vw);
+    align-items: flex-start;
     flex-wrap: wrap;
-    padding-top: 600px;
     min-height: 100vh;
     height: 100%;
-    // background-color: pink;
-
-    top: 0;
-    left: 0;
-    height: 100vh;
-
-    padding: 0 20px;
-    padding-top: 50vh;
+    padding: 30vh 20px 0 20px;
     margin: 0;
 
     img {
       transform: translateY(-60%);
       padding: 0;
-      max-width: 300px;
+      max-width: 500px;
       margin: 50px 20px;
       z-index: 1;
 
@@ -574,7 +583,7 @@
       border-left: none;
 
       div.navlinks {
-        // background: orange;
+        display: none;
         height: 50px;
         padding: 0;
         margin: 0;
