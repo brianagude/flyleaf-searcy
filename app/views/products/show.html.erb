@@ -17,7 +17,22 @@
     <% if @product.image_5.present? %>
         <%= image_tag @product.image_5.large.url %>
     <% end %>
-  </div>
+<div class='navlinks'>
+      <% if @prev %>
+        <%= link_to "Previous", @prev %>
+      <% else %>
+        <%= link_to "Previous", '#', :class => "strike"%>
+      <% end %>
+
+      <%= link_to "All Books", products_path%>
+
+      <% if @next %>
+        <%= link_to "Next", @next %>
+      <% else %>
+        <%= link_to "Next", '#', :class => "strike" %>
+      <% end %>
+    </div>
+</div>
 
   <div class="info">
       <table>
