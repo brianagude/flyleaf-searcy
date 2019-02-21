@@ -1,0 +1,745 @@
+// mixins
+@mixin flex($justify) {
+  display: flex;
+  justify-content: $justify;
+  align-items: center;
+}
+
+@mixin border() {
+  border: solid 5px white;
+  background-color: black;
+}
+
+@mixin size($width) {
+  width: $width;
+  // min-width: 100vw;
+  min-height: 100vh;
+  height: 100%;
+}
+
+@mixin position($left) {
+  position: fixed;
+  top: 0;
+  left: $left;
+}
+
+@mixin mq-phone() {
+  @media (max-width: 320px) {
+    @content;
+  }
+}
+
+@mixin mq-tablet() {
+  @media (max-width: 601px) {
+    @content;
+  }
+}
+
+// phones
+@include mq-phone() {
+  html * {
+    font-size: 32px;
+  }
+  header {
+    height: 120px;
+
+    a.menu-logo,
+    a.menu {
+      display: flex;
+    }
+    a.logo,
+    nav {
+      display: none;
+    }
+  }
+
+  div.cursor,
+  div.cursor.is-down {
+    display: none;
+  }
+
+  section.hero img {
+    max-width: 90vw;
+    transform: translateY(-80%);
+  }
+
+  section.about h3 {
+    font-size: 54px;
+    width: 80%;
+    transform: translateY(-30%);
+  }
+
+  section.artists {
+    @include flex(center);
+    flex-wrap: wrap;
+    @include size(100%);
+    padding: 50px;
+    padding-top: 200px;
+
+    img {
+      margin: 80px 20px;
+      max-width: 1000px;
+      height: 800px;
+    }
+  }
+
+  section.products {
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 500px;
+    min-height: 100vh;
+    height: 100%;
+
+    img {
+      max-width: 90vw;
+      margin: 80px 20px;
+    }
+
+    img:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  section.artist,
+  section.product {
+    @include flex(flex-start);
+    width: 100vw;
+    background: none;
+
+    div {
+      width: 100vw;
+    }
+
+    div.content {
+      z-index: 2;
+      background: none;
+      padding: 50vh 0;
+
+      div.navlinks {
+        display: none;
+      }
+
+      img {
+        margin-top: 150px;
+      }
+    }
+
+    div.info {
+      left: 0;
+      height: 100%;
+      overflow: hidden;
+
+      table {
+        margin-top: 0;
+        p,
+        h4,
+        a {
+          font-size: 48px;
+        }
+      }
+    }
+  }
+
+  section.artist {
+    padding-top: 30px;
+    div.content {
+      align-items: flex-start;
+      padding: 0;
+      height: 100%;
+      // pointer-events: none;
+
+      img {
+        max-width: 1000px;
+      }
+    }
+
+    div.info {
+      margin-top: 100px;
+    }
+  }
+
+  section.product {
+    div.info {
+      background: none;
+      // z-index: 2;
+      display: flex;
+      align-items: flex-start;
+      padding-top: 160px;
+      // pointer-events: none;
+      div.navlinks {
+        display: none;
+      }
+    }
+
+    div.content img {
+      max-width: 1200px;
+      max-height: 1200px;
+    }
+    div.content div.navlinks {
+      min-height: 30px;
+      max-height: 30px;
+      height: 30px;
+    }
+
+    table tr:last-child {
+      display: none;
+    }
+  }
+  section.menu {
+    display: flex !important;
+  }
+
+  footer {
+    justify-content: center;
+    flex-wrap: wrap;
+    height: auto;
+    padding: 15px 10px;
+    p {
+      display: block;
+      width: 100%;
+      text-align: center;
+      line-height: 0.5em;
+    }
+  }
+}
+
+@include mq-phone() {
+  html * {
+    font-size: 18px;
+  }
+
+  header {
+    nav {
+      @include flex(space-between);
+      width: 25vw;
+    }
+  }
+  div.cursor {
+    display: none;
+  }
+
+  section.artists {
+    @include border();
+    @include flex(center);
+    @include size(100%);
+    flex-wrap: wrap;
+    padding: 56px 10px 0 10px;
+
+    img {
+      margin-top: 5px;
+      margin: 20px;
+      // transform: translateY(-64px);
+      max-width: 260px;
+      height: 300px;
+    }
+  }
+
+  section.products {
+    @include border();
+    @include flex(center);
+    @include size(100%);
+    flex-wrap: wrap;
+    padding-top: 600px;
+    min-height: 100vh;
+    height: 100%;
+    // background-color: pink;
+
+    top: 0;
+    left: 0;
+    height: 100vh;
+
+    padding: 0 20px;
+    padding-top: 50vh;
+    margin: 0;
+
+    img {
+      transform: translateY(-60%);
+      padding: 0;
+      max-width: 300px;
+      margin: 50px 20px;
+      z-index: 1;
+
+      &:hover {
+        border: solid 5px #fff;
+      }
+    }
+  }
+
+  section.artist,
+  section.product {
+    display: flex;
+    flex-direction: row;
+    width: 50vw;
+    @include border();
+    min-height: 100vh;
+    max-height: 100%;
+
+    div {
+      @include border();
+      @include size(50%);
+      margin: 0;
+      padding: 0;
+      border-top: none;
+    }
+
+    div.content {
+      @include flex(center);
+      @include position(0);
+
+      border-top: none;
+      padding-top: 100px;
+      padding-bottom: 0;
+      margin-bottom: 0;
+
+      flex-wrap: wrap;
+      overflow-y: scroll;
+
+      img {
+        border: solid 5px #fff;
+        margin: 0 50px 50px 50px;
+        padding: 0;
+        max-width: 95%;
+        max-height: 95%;
+      }
+    }
+
+    div.info {
+      @include position(50%);
+      @include flex(center);
+      @include border();
+      margin-top: 0;
+      padding: 80px 0 0 0;
+      // background-color: yellow;
+
+      overflow-y: scroll;
+      flex-wrap: wrap;
+
+      text-align: center;
+      border-left: none;
+
+      div.navlinks {
+        display: none;
+        // background: orange;
+        height: 50px;
+        padding: 0;
+        margin: 0;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        // background: pink;
+
+        margin: 0;
+        padding: 0;
+
+        td {
+          padding: 10px 20px;
+
+          p,
+          h4,
+          a {
+            font-size: 24px;
+            font-family: "happy";
+          }
+        }
+      }
+    }
+  }
+
+  section.artist {
+    img {
+      max-width: 80%;
+      max-height: 80%;
+    }
+    table {
+      margin-top: 40px;
+      td {
+        p,
+        h4,
+        a {
+          text-align: center;
+        }
+        h4,
+        a {
+          font-family: "bluu";
+        }
+      }
+      tr.navlinks a {
+        margin: 0 20px;
+        font-family: "bluu";
+      }
+      tr.navlinks a.strike {
+        opacity: 0.5;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  section.product {
+    table {
+      p {
+        text-align: left;
+        // font-weight: 700;
+      }
+      h4,
+      a {
+        text-align: right;
+      }
+
+      tr:last-child a {
+        margin: 0 20px;
+        font-family: "bluu";
+      }
+
+      td:nth-child(odd) {
+        width: 45%;
+      }
+    }
+
+    div.navlinks {
+      @include flex(center);
+      margin-top: 40px;
+      border: none;
+      width: 100%;
+      height: auto;
+
+      a {
+        margin: 0 20px;
+      }
+
+      a.strike {
+        // text-decoration: line-through;
+        opacity: 0.5;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  section.menu {
+    display: none !important;
+    @include position(0);
+    @include size(100%);
+    @include border();
+    @include flex(center);
+    // transform: translateX(-100%);
+    transition: transform 1s;
+    background: rgba(155, 155, 155, 0.7);
+    mix-blend-mode: difference;
+    flex-wrap: wrap;
+    z-index: 3;
+    div {
+      @include flex(center);
+      flex-wrap: wrap;
+      text-align: center;
+      width: 100%;
+      margin: 20px;
+      a {
+        display: block;
+        width: 100%;
+        font-size: 5em;
+        margin: 30px 0;
+      }
+    }
+  }
+
+  section.split {
+    display: none;
+    @include position(0);
+    @include size(50%);
+
+    background-color: #fff;
+    mix-blend-mode: difference;
+    pointer-events: none;
+    transition: all 0.5s ease;
+    z-index: 2;
+  }
+
+  footer {
+    @include flex(space-between);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 40px;
+    padding: 25px 20px;
+  }
+}
+
+@include mq-tablet() {
+  html * {
+    font-size: 18px;
+  }
+
+  header {
+    nav {
+      @include flex(flex-end);
+      width: 20vw;
+
+      padding-right: 0;
+      a {
+        margin: 0 10px;
+        // padding: 0;
+        // text-align: right;
+        // background: pink;
+        transform: translateX(10px);
+      }
+      // a:last-child {
+      //   margin-right: 0;
+      // }
+    }
+  }
+  div.cursor {
+    display: none;
+  }
+
+  section.about h3 {
+    font-size: 54px;
+    width: 80%;
+    transform: translateY(-30%);
+  }
+
+  section.artists {
+    @include border();
+    @include flex(center);
+    @include size(100%);
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 56px 10px 0 10px;
+
+    img {
+      margin-top: 5px;
+      margin: 50px;
+      // transform: translateY(-64px);
+      max-width: 5000px;
+      height: 500px;
+    }
+  }
+
+  section.products {
+    @include border();
+    @include flex(center);
+    @include size(100%);
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 30vh 20px 0 20px;
+    margin: 0;
+
+    img {
+      transform: translateY(-60%);
+      padding: 0;
+      max-width: 500px;
+      margin: 50px 20px;
+      z-index: 1;
+
+      &:hover {
+        border: solid 5px #fff;
+      }
+    }
+  }
+
+  section.artist,
+  section.product {
+    display: flex;
+    flex-direction: row;
+    width: 50vw;
+    @include border();
+    min-height: 100vh;
+    max-height: 100%;
+
+    div {
+      @include border();
+      @include size(50%);
+      margin: 0;
+      padding: 0;
+      border-top: none;
+    }
+
+    div.content {
+      @include flex(center);
+      @include position(0);
+
+      border-top: none;
+      padding-top: 100px;
+      padding-bottom: 0;
+      margin-bottom: 0;
+
+      flex-wrap: wrap;
+      overflow-y: scroll;
+
+      img {
+        border: solid 5px #fff;
+        margin: 0 50px 50px 50px;
+        padding: 0;
+        max-width: 90%;
+        max-height: 90%;
+      }
+    }
+
+    div.info {
+      @include position(50%);
+      @include flex(center);
+      @include border();
+      margin-top: 0;
+      padding: 80px 0 0 0;
+      // background-color: yellow;
+
+      overflow-y: scroll;
+      flex-wrap: wrap;
+
+      text-align: center;
+      border-left: none;
+
+      div.navlinks {
+        display: none;
+        height: 50px;
+        padding: 0;
+        margin: 0;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        // background: pink;
+
+        margin: 0;
+        padding: 0;
+
+        td {
+          padding: 10px 20px;
+
+          p,
+          h4,
+          a {
+            font-size: 24px;
+            font-family: "happy";
+          }
+        }
+      }
+    }
+  }
+
+  section.artist {
+    table {
+      td {
+        p,
+        h4,
+        a {
+          text-align: center;
+        }
+        h4,
+        a {
+          font-family: "bluu";
+        }
+      }
+      tr.navlinks a {
+        margin: 0 20px;
+        font-family: "bluu";
+      }
+      tr.navlinks a.strike {
+        opacity: 0.5;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  section.product {
+    table {
+      p {
+        text-align: left;
+        // font-weight: 700;
+      }
+      h4,
+      a {
+        text-align: right;
+      }
+
+      tr:last-child a {
+        margin: 0 20px;
+        font-family: "bluu";
+      }
+
+      td:nth-child(odd) {
+        width: 45%;
+      }
+    }
+
+    div.navlinks {
+      @include flex(center);
+      margin-top: 40px;
+      border: none;
+      width: 100%;
+      height: auto;
+
+      a {
+        margin: 0 20px;
+      }
+
+      a.strike {
+        // text-decoration: line-through;
+        opacity: 0.5;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  section.menu {
+    display: none !important;
+    @include position(0);
+    @include size(100%);
+    @include border();
+    @include flex(center);
+    // transform: translateX(-100%);
+    transition: transform 1s;
+    background: rgba(155, 155, 155, 0.7);
+    mix-blend-mode: difference;
+    flex-wrap: wrap;
+    z-index: 3;
+    div {
+      @include flex(center);
+      flex-wrap: wrap;
+      text-align: center;
+      width: 100%;
+      margin: 20px;
+      a {
+        display: block;
+        width: 100%;
+        font-size: 5em;
+        margin: 30px 0;
+      }
+    }
+  }
+
+  section.split {
+    display: none;
+    @include position(0);
+    @include size(50%);
+
+    background-color: #fff;
+    mix-blend-mode: difference;
+    pointer-events: none;
+    transition: all 0.5s ease;
+    z-index: 2;
+  }
+
+  footer {
+    @include flex(space-between);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 40px;
+    padding: 25px 20px;
+  }
+}

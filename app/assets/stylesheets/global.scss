@@ -1,3 +1,5 @@
+@import "media";
+
 // fonts
 @font-face {
   font-family: "bluu";
@@ -13,39 +15,33 @@
 }
 
 // mixins
-@mixin flex($justify) {
-  display: flex;
-  justify-content: $justify;
-  align-items: center;
-}
-
-@mixin border() {
-  border: solid 5px white;
-  background-color: black;
-}
-
-@mixin size($width) {
-  width: $width;
-  min-height: 100vh;
-  height: 100%;
-}
-
-@mixin position($left) {
-  position: fixed;
-  top: 0;
-  left: $left;
-}
-
-@mixin mq($screen) {
-  @media only screen and (max-device-width: $screen) {
-    @content;
-  }
-}
+// @mixin flex($justify) {
+//   display: flex;
+//   justify-content: $justify;
+//   align-items: center;
+// }
+//
+// @mixin border() {
+//   border: solid 5px white;
+//   background-color: black;
+// }
+//
+// @mixin size($width) {
+//   width: $width;
+//   min-height: 100vh;
+//   height: 100%;
+// }
+//
+// @mixin position($left) {
+//   position: fixed;
+//   top: 0;
+//   left: $left;
+// }
 
 // styles
 html * {
   font-size: 18px;
-  cursor: none !important;
+  // cursor: none !important;
   -webkit-touch-callout: none !important;
   -webkit-user-drag: none !important;
   -webkit-user-select: none !important;
@@ -109,6 +105,10 @@ a {
   text-decoration: none;
   color: #fff;
   font-family: "bluu";
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 header {
@@ -117,9 +117,9 @@ header {
   @include position(0);
   top: 0;
 
-  width: 100%;
+  width: 100vw;
   height: 64px;
-  padding: 10px 15px;
+  padding: 10px;
   z-index: 5;
 
   a.menu-logo {
@@ -131,30 +131,26 @@ header {
     display: none;
     width: 80px;
     padding: 5px;
-    transform: translateY(-6px);
+    // transform: translateY(-6px);
     margin: 0;
   }
 
   a.logo {
-    max-width: 600px;
+    // max-width: 600px;
+    width: 45%;
     transform: translateY(-6px);
     margin: 0;
   }
 
   nav {
     @include flex(space-between);
-    width: 20vw;
-
-    img {
-      width: 25px;
-    }
 
     a {
-      margin: 0 5px;
+      margin: 0 10px;
     }
 
-    div {
-      margin-left: 10px;
+    img {
+      width: 32px;
     }
   }
 }
@@ -162,6 +158,7 @@ header {
 .show-menu {
   transform: translateY(-100%);
 }
+
 .switch {
   transform: translateX(-100%);
 }
@@ -172,8 +169,8 @@ div.cursor {
   left: 50%;
   transform: translate(-50%, -50%);
 
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   background-color: #fff;
   mix-blend-mode: difference;
   pointer-events: none;
@@ -184,50 +181,23 @@ div.cursor {
 }
 
 div.cursor.is-down {
-  width: 60px;
-  height: 60px;
+  width: 64px;
+  height: 64px;
   background-color: rgba(0, 0, 0, 0);
   border: solid 5px #fff;
 }
 
-div.search {
-  background-color: #000;
+section.hero {
+  @include border();
+  @include flex(center);
+  @include position(0);
+  @include size(100%);
+  // padding-top: 64px;
+  flex-wrap: wrap;
 
-  width: 100%;
-  height: 40px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  border-right: 5px solid #fff;
-  border-bottom: 5px solid #fff;
-
-  z-index: 1;
-
-  a {
-    margin: 0 80px;
-  }
-
-  form {
-    width: 100%;
-    left: 0;
-    padding: 5px;
-
-    background-color: #000;
-    border: none;
-
-    input[type="text"] {
-      width: 100%;
-
-      background-color: #000;
-      color: rgba(255, 255, 255, 1);
-      font-family: "bluu";
-      font-size: inherit;
-
-      border: none;
-      outline: none;
-    }
+  img {
+    width: 90vw;
+    margin: auto;
   }
 }
 
@@ -235,6 +205,7 @@ section.about {
   @include flex(center);
   @include size(100vw);
   @include border();
+  // padding: 24px;
   position: fixed;
 
   h3 {
@@ -245,33 +216,20 @@ section.about {
   }
 }
 
-section.hero {
-  @include border();
-  @include flex(center);
-  @include position(0);
-  @include size(100%);
-  padding-top: 64px;
-  flex-wrap: wrap;
-
-  img {
-    width: 90vw;
-    margin: auto;
-  }
-}
-
 section.artists {
   @include border();
   @include flex(center);
-  @include size(100%);
-  padding: 56px 10px 0 10px;
+  @include size(100vw);
+  // padding: 56px 10px 0 10px;
   flex-wrap: wrap;
 
   img {
-    margin-top: 5px;
-    margin: 20px;
-    // transform: translateY(-64px);
-    max-width: 260px;
-    height: 300px;
+    margin: 24px;
+    height: 20vw;
+
+    &:hover {
+      @include border();
+    }
   }
 }
 
@@ -280,25 +238,13 @@ section.products {
   @include flex(center);
   @include size(100vw);
   flex-wrap: wrap;
-  // background-color: pink;
-
-  top: 0;
-  left: 0;
-  height: 100vh;
-
-  padding: 0 20px;
-  padding-top: 50vh;
-  margin: 0;
 
   img {
-    transform: translateY(-60%);
-    padding: 0;
-    max-width: 300px;
-    margin: 50px 20px;
-    z-index: 1;
+    margin: 24px;
+    height: 20vw;
 
     &:hover {
-      border: solid 5px #fff;
+      @include border();
     }
   }
 }
@@ -340,8 +286,9 @@ section.product {
       border: solid 5px #fff;
       margin: 0 50px 50px 50px;
       padding: 0;
-      max-width: 600px;
-      max-height: 600px;
+      // width: 600px;
+      height: auto;
+      width: 60%;
     }
   }
 
@@ -357,9 +304,10 @@ section.product {
     flex-wrap: wrap;
 
     text-align: center;
-    border-left: none;
+    // border-left: none;
 
     div.navlinks {
+      // display: none;
       // background: orange;
       height: 50px;
       padding: 0;
@@ -373,6 +321,10 @@ section.product {
 
       margin: 0;
       padding: 0;
+
+      tr.mobile {
+        display: none;
+      }
 
       td {
         padding: 10px 20px;
@@ -447,11 +399,11 @@ section.product {
     }
 
     a.strike {
-      // text-decoration: line-through;
       opacity: 0.5;
-      &:hover {
-        text-decoration: none;
-      }
+      text-decoration: line-through;
+      // &:hover {
+      //   text-decoration: none;
+      // }
     }
   }
 }
@@ -462,11 +414,11 @@ section.menu {
   @include size(100%);
   @include border();
   @include flex(center);
-  // transform: translateX(-100%);
   transition: transform 1s;
-  background: rgba(155, 155, 155, 0.7);
+  background: rgba(155, 155, 155, 1);
   mix-blend-mode: difference;
   flex-wrap: wrap;
+  // transform: translateY(-100%);
   z-index: 3;
   div {
     @include flex(center);
@@ -484,15 +436,14 @@ section.menu {
 }
 
 section.split {
-  display: none;
-  @include position(0);
+  @include position(50%);
   @include size(50%);
 
   background-color: #fff;
   mix-blend-mode: difference;
   pointer-events: none;
   transition: all 0.5s ease;
-  z-index: 2;
+  z-index: 20;
 }
 
 footer {

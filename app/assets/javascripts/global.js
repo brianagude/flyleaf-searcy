@@ -19,8 +19,8 @@ $(click).click(function() {
 
 // toggle split screen
 const split = document.querySelector("section.split");
-const change = document.querySelector("a.switch");
-$(change).click(function() {
+const splitswitch = document.querySelector("a.splitswitch");
+$(splitswitch).click(function() {
   $(split).toggleClass("switch");
 
   return false;

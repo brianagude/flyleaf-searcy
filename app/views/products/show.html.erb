@@ -17,7 +17,7 @@
     <% if @product.image_5.present? %>
         <%= image_tag @product.image_5.large.url %>
     <% end %>
-<div class='navlinks'>
+    <div class='navlinks'>
       <% if @prev %>
         <%= link_to "Previous", @prev %>
       <% else %>
@@ -77,7 +77,7 @@
         </td>
       </tr>
       <tr class='mobile'>
-        <tr>
+        
           <td colspan="2"><% if @prev %>
             <%= link_to "Previous", @prev %>
           <% else %>
@@ -92,6 +92,7 @@
             <%= link_to "Next", '#', :class => "strike" %>
           <% end %></td>
       </tr>
+
     </table>
 
     <div class='navlinks'>
